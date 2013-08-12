@@ -67,7 +67,7 @@ public final class CompilerWarnings {
     public static final String JAVADOC                  = "javadoc";
 
     /**
-     * Suppresses warnings relative to non-nls string literals
+     * Suppresses warnings relative to non-localized string literals
      */
     public static final String NLS                      = "nls";
 
