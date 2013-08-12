@@ -1,4 +1,4 @@
-/**
+/*
  * This program is free software. It comes without any warranty, to
  * the extent permitted by applicable law. You can redistribute it
  * and/or modify it under the terms of the Do What The Fuck You Want
@@ -22,9 +22,7 @@ public final class PMDWarnings {
     public static final String PMD                                               = "PMD";
 
     /**
-     * Avoid jumbled loop incrementers - its usually a mistake, and is confusing even if intentional.
-     * 
-     * <h2>Example</h2>
+     * Avoid jumbled loop incrementers - its usually a mistake, and is confusing even if intentional. <h2>Example</h2>
      * 
      * <pre>
      * public class JumbledIncrementerRule {
@@ -44,9 +42,7 @@ public final class PMDWarnings {
     public static final String JUMBLED_INCREMENTER                               = "PMD.JumbledIncrementer";
 
     /**
-     * Some for loops can be simplified to while loops, this makes them more concise.
-     * 
-     * <h2>Example</h2>
+     * Some for loops can be simplified to while loops, this makes them more concise. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -54,6 +50,7 @@ public final class PMDWarnings {
      *         for (;true;) true; // No Init or Update part, may as well be: while (true)
      *     }
      * }
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -64,9 +61,7 @@ public final class PMDWarnings {
     /**
      * Override both public boolean Object.equals(Object other), and public int Object.hashCode(), or override neither.
      * Even if you are inheriting a hashCode() from a parent class, consider implementing hashCode and explicitly
-     * delegating to your superclass.
-     * 
-     * <h2>Example</h2>
+     * delegating to your superclass. <h2>Example</h2>
      * 
      * <pre>
      * public class Bar { // poor, missing a hashcode() method
@@ -100,9 +95,7 @@ public final class PMDWarnings {
     /**
      * Partially created objects can be returned by the Double Checked Locking pattern when used in Java. An optimizing
      * JRE may assign a reference to the baz variable before it creates the object the reference is intended to point
-     * to.
-     * 
-     * <h2>Example</h2>
+     * to. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -129,9 +122,7 @@ public final class PMDWarnings {
     public static final String DOUBLE_CHECKED_LOCKING                            = "DoubleCheckedLocking";
 
     /**
-     * Avoid returning from a finally block, this can discard exceptions.
-     * 
-     * <h2>Example</h2>
+     * Avoid returning from a finally block, this can discard exceptions. <h2>Example</h2>
      * 
      * <pre>
      * public class Bar {
@@ -153,9 +144,7 @@ public final class PMDWarnings {
     public static final String RETURN_FROM_FINALLY_BLOCK                         = "ReturnFromFinallyBlock";
 
     /**
-     * Do not use "if" statements whose conditionals are always true or always false.
-     * 
-     * <h2>Example</h2>
+     * Do not use "if" statements whose conditionals are always true or always false. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -174,9 +163,7 @@ public final class PMDWarnings {
 
     /**
      * Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boolean.valueOf()
-     * instead.
-     * 
-     * <h2>Example</h2> </br> <code>
+     * instead. <h2>Example</h2> </br> <code>
      * Boolean buz = Boolean.valueOf(false); // ...., just reference Boolean.FALSE</br>
      * </br>
      * Boolean bar = new Boolean(&quot;true&quot;); // unnecessary creation, just reference Boolean.TRUE</br>
@@ -190,9 +177,7 @@ public final class PMDWarnings {
 
     /**
      * Sometimes two consecutive 'if' statements can be consolidated by separating their conditions with a boolean
-     * short-circuit operator.
-     * 
-     * <h2>Example</h2>
+     * short-circuit operator. <h2>Example</h2>
      * 
      * <pre>
      * void bar() {
@@ -217,9 +202,7 @@ public final class PMDWarnings {
 
     /**
      * When deriving an array of a specific class from your Collection, one should provide an array of the same class as
-     * the parameter of the toArray() method. Doing otherwise you will will result in a ClassCastException.
-     * 
-     * <h2>Example</h2>
+     * the parameter of the toArray() method. Doing otherwise you will will result in a ClassCastException. <h2>Example</h2>
      * 
      * <pre>
      * Collection c = new ArrayList();
@@ -244,9 +227,8 @@ public final class PMDWarnings {
      * double (or as a binary fraction of any finite length). Thus, the long value that is being passed in to the
      * constructor is not exactly equal to 0.1, appearances notwithstanding. The (String) constructor, on the other
      * hand, is perfectly predictable: 'new BigDecimal("0.1")' is exactly equal to 0.1, as one would expect. Therefore,
-     * it is generally recommended that the (String) constructor be used in preference to this one.
-     * 
-     * <h2>Example</h2><code></br>
+     * it is generally recommended that the (String) constructor be used in preference to this one. <h2>Example</h2>
+     * <code></br>
      * BigDecimal bd = new BigDecimal(1.123);  // loss of precision, this would trigger the rule
      * </br>
      * BigDecimal bd = new BigDecimal("1.123");// preferred approach
@@ -261,9 +243,7 @@ public final class PMDWarnings {
 
     /**
      * The null check here is misplaced. If the variable is null a {@link NullPointerException} will be thrown. Either
-     * the check is useless (the variable will never be "null") or it is incorrect.
-     * 
-     * <h2>Example</h2>
+     * the check is useless (the variable will never be "null") or it is incorrect. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -288,9 +268,7 @@ public final class PMDWarnings {
 
     /**
      * Avoid using java.lang.ThreadGroup; although it is intended to be used in a threaded environment it contains
-     * methods that are not thread-safe.
-     * 
-     * <h2>Example</h2>
+     * methods that are not thread-safe. <h2>Example</h2>
      * 
      * <pre>
      * public class Bar {
@@ -310,9 +288,7 @@ public final class PMDWarnings {
 
     /**
      * The null check is broken since it will throw a NullPointerException itself. It is likely that you used || instead
-     * of && or vice versa.
-     * 
-     * <h2>Example</h2>
+     * of && or vice versa. <h2>Example</h2>
      * 
      * <pre>
      * public String bar(String string) {
@@ -332,9 +308,7 @@ public final class PMDWarnings {
 
     /**
      * Don't create instances of already existing BigInteger (BigInteger.ZERO, BigInteger.ONE) and for Java 1.5 onwards,
-     * BigInteger.TEN and BigDecimal (BigDecimal.ZERO, BigDecimal.ONE, BigDecimal.TEN)
-     * 
-     * <h2>Example</h2><code></br>
+     * BigInteger.TEN and BigDecimal (BigDecimal.ZERO, BigDecimal.ONE, BigDecimal.TEN) <h2>Example</h2><code></br>
      * BigInteger bi = new BigInteger(1);       // reference BigInteger.ONE instead</br>
      * BigInteger bi2 = new BigInteger("0");   // reference BigInteger.ZERO instead</br>
      * BigInteger bi3 = new BigInteger(0.0);   // reference BigInteger.ZERO instead</br>
@@ -349,9 +323,7 @@ public final class PMDWarnings {
 
     /**
      * Integer literals should not start with zero since this denotes that the rest of literal will be interpreted as an
-     * octal value.
-     * 
-     * <h2>Example</h2><code></br>
+     * octal value. <h2>Example</h2><code></br>
      * int i = 012; // set i with 10 not 12</br>
      * int j = 010;    // set j with 8 not 10</br>
      * k = i * j;      // set k with 80 not 120</br>
@@ -365,9 +337,7 @@ public final class PMDWarnings {
 
     /**
      * Application with hard-coded IP addresses can become impossible to deploy in some cases. Externalizing IP adresses
-     * is preferable.
-     * 
-     * <h2>Example</h2>
+     * is preferable. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -382,9 +352,7 @@ public final class PMDWarnings {
 
     /**
      * Always check the return values of navigation methods (next, previous, first, last) of a ResultSet. If the value
-     * return is 'false', it should be handled properly.
-     * 
-     * <h2>Example</h2><code></br>
+     * return is 'false', it should be handled properly. <h2>Example</h2><code></br>
      * Statement stat = conn.createStatement();</br>
      * ResultSet rst = stat.executeQuery("SELECT name FROM person");</br>
      * rst.next();     // what if it returns false? bad form</br>
@@ -406,9 +374,7 @@ public final class PMDWarnings {
 
     /**
      * The use of multiple unary operators may be problematic, and/or confusing. Ensure that the intended usage is not a
-     * bug, or consider simplifying the expression.
-     * 
-     * <h2>Example</h2> <code></br>
+     * bug, or consider simplifying the expression. <h2>Example</h2> <code></br>
      * // These are typo bugs, or at best needlessly complex and confusing:</br>
      * int i = - -1;</br>
      * int j = + - +1;</br>
@@ -434,9 +400,7 @@ public final class PMDWarnings {
     public static final String AVOID_MULTIPLE_UNARY_OPERATORS                    = "AvoidMultipleUnaryOperators";
 
     /**
-     * No need to explicitly extend Object.
-     * 
-     * <h2>Example</h2>
+     * No need to explicitly extend Object. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo extends Object { // not required
@@ -450,9 +414,7 @@ public final class PMDWarnings {
 
     /**
      * The skip() method may skip a smaller number of bytes than requested. Check the returned value to find out if it
-     * was the case or not.
-     * 
-     * <h2>Example</h2>
+     * was the case or not. <h2>Example</h2>
      * 
      * <pre>
      * public class Foo {
@@ -480,9 +442,7 @@ public final class PMDWarnings {
 
     /**
      * Using a branching statement as the last part of a loop may be a bug, and/or is confusing. Ensure that the usage
-     * is not a bug, or consider using another approach.
-     * 
-     * <h2>Example</h2>
+     * is not a bug, or consider using another approach. <h2>Example</h2>
      * 
      * <pre>
      * // unusual use of branching statement in a loop
@@ -508,9 +468,7 @@ public final class PMDWarnings {
 
     /**
      * Explicitly calling Thread.run() method will execute in the caller's thread of control. Instead, call
-     * Thread.start() for the intended behavior.
-     * 
-     * <h2>Example</h2><code></br>
+     * Thread.start() for the intended behavior. <h2>Example</h2><code></br>
      * Thread t = new Thread();</br>
      * t.run();            // use t.start() instead</br>
      * new Thread().run(); // same violation</br>
@@ -524,9 +482,7 @@ public final class PMDWarnings {
 
     /**
      * Don't use floating point for loop indices. If you must use floating point, use double unless you're certain that
-     * float provides enough precision and you have a compelling performance need (space or time).
-     * 
-     * <h2>Example</h2>
+     * float provides enough precision and you have a compelling performance need (space or time). <h2>Example</h2>
      * 
      * <pre>
      * public class Count {
