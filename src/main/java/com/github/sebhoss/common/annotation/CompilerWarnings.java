@@ -11,7 +11,8 @@ package com.github.sebhoss.common.annotation;
  * List of Eclipse compiler warnings which can be suppressed by the {@link SuppressWarnings} annotation.
  * 
  * @see <a
- *      href="http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.jdt.doc.user/tasks/task-suppress_warnings.htm">http://help.eclipse.org/juno/index.jsp?topic=/org.eclipse.jdt.doc.user/tasks/task-suppress_warnings.htm</a>
+ *      href="http://help.eclipse.org/kepler/index.jsp?topic=/org.eclipse.jdt.doc.user/tasks/task-suppress_warnings.htm">Eclipse
+ *      Reference Documentation</a>
  */
 @SuppressWarnings(CompilerWarnings.NLS)
 public final class CompilerWarnings {
