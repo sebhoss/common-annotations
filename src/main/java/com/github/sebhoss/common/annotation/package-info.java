@@ -8,4 +8,5 @@
 /**
  * Common code for annotations.
  */
+@NotNullByDefault
 package com.github.sebhoss.common.annotation;
