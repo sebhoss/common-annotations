@@ -61,6 +61,11 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -584,6 +589,60 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
     public static final String FOR_LOOPS_MUST_USE_BRACES                         = "ForLoopsMustUseBraces";
+
+    /**
+     * Object clone() should be implemented with super.clone(). <h2>Example</h2>
+     * 
+     * <pre>
+     * class Foo {
+     *     public Object clone() {
+     *         return new Foo(); // This is bad
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     *      Documentation</a>
+     */
+    public static final String PROPER_CLONE_IMPLEMENTATION                       = "ProperCloneImplementation";
+
+    /**
+     * The method clone() should throw a CloneNotSupportedException. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyClass implements Cloneable {
+     *     public Object clone() { // will cause an error
+     *         MyClass clone = (MyClass) super.clone();
+     *         return clone;
+     *     }
+     * }
+     * 
+     * </pre>
+     * 
+     * @since PMD 1.9
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     *      Documentation</a>
+     */
+    public static final String CLONE_THROWS_CLONE_NOT_SUPPORTED_EXCEPTION        = "CloneThrowsCloneNotSupportedException";
+
+    /**
+     * The method clone() should only be implemented if the class implements the Cloneable interface with the exception
+     * of a final method that only throws CloneNotSupportedException. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyClass {
+     *     public Object clone() throws CloneNotSupportedException {
+     *         return foo;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.9
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     *      Documentation</a>
+     */
+    public static final String CLONE_METHOD_MUST_IMPLEMENT_CLONEABLE             = "CloneMethodMustImplementCloneable";
 
     private PMDWarnings() {
         // Constants class
