@@ -81,6 +81,10 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
+     * 
+     * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -958,6 +962,33 @@ public final class PMDWarnings {
      *      Documentation</a>
      */
     public static final String TOO_MANY_METHODS                                  = "TooManyMethods";
+
+    /**
+     * Denotes whether comments are required (or unwanted) for specific language elements.
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     *      Documentation</a>
+     */
+    public static final String COMMENT_REQUIRED                                  = "CommentRequired";
+
+    /**
+     * Determines whether the dimensions of non-header comments found are within the specified limits.
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     *      Documentation</a>
+     */
+    public static final String COMMENT_SIZE                                      = "CommentSize";
+
+    /**
+     * A rule for the politically correct... we don't want to offend anyone.
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     *      Documentation</a>
+     */
+    public static final String COMMENT_CONTENT                                   = "CommentContent";
 
     private PMDWarnings() {
         // Constants class
