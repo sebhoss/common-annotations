@@ -52,6 +52,15 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -503,6 +512,78 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String DONT_USE_FLOAT_TYPE_FOR_LOOP_INDICES              = "DontUseFloatTypeForLoopIndices";
+
+    /**
+     * Avoid using if statements without using braces to surround the code block. If the code formatting or indentation
+     * is lost then it becomes difficult to separate the code being controlled from the rest. <h2>Example</h2>
+     * 
+     * <pre>
+     * if (foo) // not recommended
+     *     x++;
+     * 
+     * if (foo) { // preferred approach
+     *     x++;
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     */
+    public static final String IF_STMTS_MUST_USE_BRACES                          = "IfSTmtsMustUseBraces";
+
+    /**
+     * Avoid using 'while' statements without using braces to surround the code block. If the code formatting or
+     * indentation is lost then it becomes difficult to separate the code being controlled from the rest. <h2>Example</h2>
+     * 
+     * <pre>
+     * while (true)
+     *     // not recommended
+     *     x++;
+     * 
+     * while (true) { // preferred approach
+     *     x++;
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.7
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     */
+    public static final String WHILE_LOOPS_MUST_USE_BRACES                       = "WhileLoopsMustUseBraces";
+
+    /**
+     * Avoid using if..else statements without using surrounding braces. If the code formatting or indentation is lost
+     * then it becomes difficult to separate the code being controlled from the rest. <h2>Example</h2>
+     * 
+     * <pre>
+     * // this is OK
+     * if (foo)
+     *     x++;
+     * 
+     * // but this is not
+     * if (foo)
+     *     x = x + 1;
+     * else
+     *     x = x - 1;
+     * </pre>
+     * 
+     * @since PMD 0.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     */
+    public static final String IF_ELSE_STATEMENTS_MUST_USE_BRACES                = "IfElseStmtsMustUseBraces";
+
+    /**
+     * Avoid using 'for' statements without using curly braces. If the code formatting or indentation is lost then it
+     * becomes difficult to separate the code being controlled from the rest. <h2>Example</h2>
+     * 
+     * <pre>
+     * for (int i = 0; i &lt; 42; i++)
+     *     foo();
+     * </pre>
+     * 
+     * @since PMD 0.7
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     */
+    public static final String FOR_LOOPS_MUST_USE_BRACES                         = "ForLoopsMustUseBraces";
 
     private PMDWarnings() {
         // Constants class
