@@ -51,6 +51,7 @@ public final class PMDWarnings {
      * }
      * 
      * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
