@@ -85,6 +85,7 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -989,6 +990,8 @@ public final class PMDWarnings {
      *      Documentation</a>
      */
     public static final String COMMENT_CONTENT                                   = "CommentContent";
+
+    // TODO: Add controversial rule set constants: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html
 
     private PMDWarnings() {
         // Constants class
