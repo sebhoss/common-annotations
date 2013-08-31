@@ -86,6 +86,18 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -992,6 +1004,140 @@ public final class PMDWarnings {
     public static final String COMMENT_CONTENT                                   = "CommentContent";
 
     // TODO: Add controversial rule set constants: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html
+
+    /**
+     * This rule counts the number of unique attributes, local variables, and return types within an object. A number
+     * higher than the specified threshold can indicate a high degree of coupling. <h2>Example</h2>
+     * 
+     * <pre>
+     * import com.Blah;
+     * import org.Bar;
+     * import org.Bardo;
+     * 
+     * public class Foo {
+     *    private Blah var1;
+     *    private Bar var2;
+     *  
+     *     //followed by many imports of unique objects
+     *    void ObjectC doWork() {
+     *      Bardo var55;
+     *      ObjectA var44;
+     *      ObjectZ var93;
+     *      return something;
+     *    }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.04
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String COUPLING_BETWEEN_OBJECTS                          = "CouplingBetweenObjects";
+
+    /**
+     * A high number of imports can indicate a high degree of coupling within an object. This rule counts the number of
+     * unique imports and reports a violation if the count is above the user-specified threshold. <h2>Example</h2>
+     * 
+     * <pre>
+     * import blah.blah.Baz;
+     * import blah.blah.Bif;
+     * 
+     * // 18 others from the same package elided
+     * public class Foo {
+     *     public void doWork() {
+     *     }
+     * }
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * </pre>
+     * 
+     * @since PMD 1.04
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EXCESSIVE_IMPORTS                                 = "ExcessiveImports";
+
+    /**
+     * The use of implementation types as object references limits your ability to use alternate implementations in the
+     * future as requirements change. Whenever available, referencing objects by their interface types provides much
+     * more flexibility. <h2>Example</h2>
+     * 
+     * <pre>
+     * // sub-optimal approach
+     * public HashSet getFoo() {
+     *     return new HashSet();
+     * }
+     * 
+     * // preferred approach
+     * public Set getFoo() {
+     *     return new HashSet();
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.7
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String LOOSE_COUPLING                                    = "LooseCoupling";
+
+    /**
+     * Avoid using classes from the configured package hierarchy outside of the package hierarchy, except when using one
+     * of the configured allowed classes. <h2>Example</h2>
+     * 
+     * <pre>
+     * package some.package;
+     * 
+     * import some.other.package.subpackage.subsubpackage.DontUseThisClass;
+     * 
+     * public class Bar {
+     *    DontUseThisClass boo = new DontUseThisClass();
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String LOOSE_PACKAGE_COUPLING                            = "LoosePackageCoupling";
+
+    /**
+     * The Law of Demeter is a simple rule, that says "only talk to friends". It helps to reduce coupling between
+     * classes or objects. See also the references: Andrew Hunt, David Thomas, and Ward Cunningham. The Pragmatic
+     * Programmer. From Journeyman to Master. Addison-Wesley Longman, Amsterdam, October 1999.; K.J. Lieberherr and I.M.
+     * Holland. Assuring good style for object-oriented programs. Software, IEEE, 6(5):38–48, 1989.;
+     * http://www.ccs.neu.edu/home/lieber/LoD.html; http://en.wikipedia.org/wiki/Law_of_Demeter <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void example(final Bar b) {
+     *         // this method call is ok, as b is a parameter of &quot;example&quot;
+     *         final C c = b.getC();
+     * 
+     *         // this method call is a violation, as we are using c, which we got from B.
+     *         // We should ask b directly instead, e.g. &quot;b.doItOnC();&quot;
+     *         c.doIt();
+     * 
+     *         // this is also a violation, just expressed differently as a method chain without temporary variables.
+     *         b.getC().doIt();
+     * 
+     *         // a constructor call, not a method call.
+     *         final D d = new D();
+     *         // this method call is ok, because we have create the new instance of D locally.
+     *         d.doSomethingElse();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String LAW_OF_DEMETER                                    = "LawOfDemeter";
 
     private PMDWarnings() {
         // Constants class
