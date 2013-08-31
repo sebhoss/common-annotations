@@ -98,6 +98,7 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -1054,6 +1055,7 @@ public final class PMDWarnings {
      * 
      * 
      * 
+     * 
      * </pre>
      * 
      * @since PMD 1.04
@@ -1138,6 +1140,25 @@ public final class PMDWarnings {
      *      Documentation</a>
      */
     public static final String LAW_OF_DEMETER                                    = "LawOfDemeter";
+
+    // TODO: Add design rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/design.html
+    // TODO: Add empty code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html
+    // TODO: Add finanlizer rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html
+    // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html
+    // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html
+    // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html
+    // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/junit.html
+    // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-jakarta-commons.html
+    // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-java.html
+    // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/migrating.html
+    // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/naming.html
+    // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/optimizations.html
+    // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/strictexception.html
+    // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/strings.html
+    // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/sunsecure.html
+    // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/typeresolution.html
+    // TODO: Add unnecessary rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/unnecessary.html
+    // TODO: Add unused code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/unusedcode.html
 
     private PMDWarnings() {
         // Constants class
