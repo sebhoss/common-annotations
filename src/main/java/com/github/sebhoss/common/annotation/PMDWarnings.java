@@ -50,55 +50,6 @@ public final class PMDWarnings {
      *     }
      * }
      * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -1048,6 +999,7 @@ public final class PMDWarnings {
      *     public void doWork() {
      *     }
      * }
+     * 
      * 
      * 
      * 
