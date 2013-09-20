@@ -1991,7 +1991,169 @@ public final class PMDWarnings {
      */
     public static final String UNNECESSARY_FULLY_QUALIFIED_NAME                  = "PMD.UnnecessaryFullyQualifiedName";
 
-    // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html
+    /**
+     * In J2EE, the getClassLoader() method might not work as expected. Use
+     * Thread.currentThread().getContextClassLoader() instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     ClassLoader cl = Bar.class.getClassLoader();
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.7
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String USE_PROPER_CLASS_LOADER                           = "PMD.UseProperClassLoader";
+
+    /**
+     * The EJB Specification states that any MessageDrivenBean or SessionBean should be suffixed by 'Bean'. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SomeBean implements SessionBean {
+     * } // proper name
+     * 
+     * public class MissingTheProperSuffix implements SessionBean {
+     * } // non-standard name
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String MDB_AND_SESSION_BEAN_NAMING_CONVENTION            = "PMD.MDBAndSessionBeanNamingConvention";
+
+    /**
+     * A Remote Home interface type of a Session EJB should be suffixed by 'Home'. <h2>Example</h2>
+     * 
+     * <pre>
+     * public interface MyBeautifulHome extends javax.ejb.EJBHome {
+     * } // proper name
+     * 
+     * public interface MissingProperSuffix extends javax.ejb.EJBHome {
+     * } // non-standard name
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String REMOTE_SESSION_INTERFACE_NAMING_CONVENTION        = "PMD.RemoteSessionInterfaceNamingConvention";
+
+    /**
+     * The Local Interface of a Session EJB should be suffixed by 'Local'. <h2>Example</h2>
+     * 
+     * <pre>
+     * public interface MyLocal extends javax.ejb.EJBLocalObject {
+     * } // proper name
+     * 
+     * public interface MissingProperSuffix extends javax.ejb.EJBLocalObject {
+     * } // non-standard name
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String LOCAL_INTERFACE_SESSION_NAMING_CONVENTION         = "PMD.LocalInterfaceSessionNamingConvention";
+
+    /**
+     * The Local Home interface of a Session EJB should be suffixed by 'LocalHome'. <h2>Example</h2>
+     * 
+     * <pre>
+     * public interface MyBeautifulLocalHome extends javax.ejb.EJBLocalHome {
+     * }// proper name
+     * 
+     * public interface MissingProperSuffix extends javax.ejb.EJBLocalHome {
+     * } // non-standard name
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String LOCAL_HOME_NAMING_CONVENTION                      = "PMD.LocalHomeNamingConvention";
+
+    /**
+     * Remote Interface of a Session EJB should not have a suffix. <h2>Example</h2>
+     * 
+     * <pre>
+     * // Poor Session suffix
+     * public interface BadSuffixSession extends javax.ejb.EJBObject {
+     * }
+     * 
+     * // Poor EJB suffix
+     * public interface BadSuffixEJB extends javax.ejb.EJBObject {
+     * }
+     * 
+     * // Poor Bean suffix
+     * public interface BadSuffixBean extends javax.ejb.EJBObject {
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String REMOTE_INTERFACE_NAMING_CONVENTION                = "PMD.RemoteInterfaceNamingConvention";
+
+    /**
+     * Web applications should not call System.exit(), since only the web container or the application server should
+     * stop the JVM. This rule also checks for the equivalent call Runtime.getRuntime().exit(). <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     System.exit(0); // never call this when running in an application server!
+     * }
+     * 
+     * public void foo() {
+     *     Runtime.getRuntime().exit(0); // never stop the JVM manually, the container will do this.
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String DO_NOT_CALL_SYSTEM_EXIT                           = "PMD.DoNotCallSystemExit";
+
+    /**
+     * According to the J2EE specification, an EJB should not have any static fields with write access. However, static
+     * read-only fields are allowed. This ensures proper behavior especially when instances are distributed by the
+     * container on several JREs. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SomeEJB extends EJBObject implements EJBLocalHome {
+     * 
+     *     private static int       CountA; // poor, field can be edited
+     * 
+     *     private static final int CountB; // preferred, read-only access
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String STATIC_EJB_FIELD_SHOULD_BE_FINAL                  = "PMD.StaticEJBFieldShouldBeFinal";
+
+    /**
+     * The J2EE specification explicitly forbids the use of threads. <h2>Example</h2>
+     * 
+     * <pre>
+     * // This is not allowed
+     * public class UsingThread extends Thread {
+     * 
+     * }
+     * 
+     * // Neither this,
+     * public class OtherThread implements Runnable {
+     *     // Nor this ...
+     *     public void methode() {
+     *         Runnable thread = new Thread();
+     *         thread.run();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     */
+    public static final String DO_NOT_USE_THREADS                                = "PMD.DoNotUseThreads";
+
     // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html
     // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
     // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html
