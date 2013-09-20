@@ -50,6 +50,56 @@ public final class PMDWarnings {
      *     }
      * }
      * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * </pre>
      * 
      * @since PMD 1.02
@@ -955,7 +1005,576 @@ public final class PMDWarnings {
      */
     public static final String COMMENT_CONTENT                                   = "CommentContent";
 
-    // TODO: Add controversial rule set constants: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html
+    /**
+     * This rule detects when a constructor is not necessary; i.e., when there is only one constructor, its public, has
+     * an empty body, and takes no arguments. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public Foo() {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_CONSTRUCTOR                           = "UnnecessaryConstructor";
+
+    /**
+     * Assigning a "null" to a variable (outside of its declaration) is usually bad form. Sometimes, this type of
+     * assignment is an indication that the programmer doesn't completely understand what is going on in the code. NOTE:
+     * This sort of assignment may used in some cases to dereference objects and encourage garbage collection. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     Object x = null; // this is OK
+     *     x = new Object();
+     *     // big, complex piece of code here
+     *     x = null; // this is not required
+     *     // big, complex piece of code here
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.02
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String NULL_ASSIGNMENT                                   = "NullAssignment";
+
+    /**
+     * A method should have only one exit point, and that should be the last statement in the method. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class OneReturnOnly1 {
+     *     public void foo(int x) {
+     *         if (x &gt; 0) {
+     *             return &quot;hey&quot;; // first exit
+     *         }
+     *         return &quot;hi&quot;; // second exit
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String ONLY_ONE_RETURN                                   = "OnlyOneReturn";
+
+    /**
+     * Avoid assignments in operands; this can make code more complicated and harder to read. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     int x = 2;
+     *     if ((x = getX()) == 3) {
+     *         System.out.println(&quot;3!&quot;);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.03
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String ASSIGNMENT_IN_OPERAND                             = "AssignmentInOperand";
+
+    /**
+     * Each class should declare at least one constructor. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *    // missing constructor
+     *   public void doSomething() { ... }
+     *   public void doOtherThing { ... }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.04
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AT_LEAST_ONE_CONSTRUCTOR                          = "AtLeastOneConstructor";
+
+    /**
+     * Avoid importing anything from the 'sun.*' packages. These packages are not portable and are likely to change. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * import sun.misc.foo;
+     * 
+     * public class Foo {
+     * }
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String DONT_IMPORT_SUN                                   = "DontImportSun";
+
+    /**
+     * A suspicious octal escape sequence was found inside a String literal. The Java language specification (section
+     * 3.10.6) says an octal escape sequence inside a literal String shall consist of a backslash followed by:
+     * OctalDigit | OctalDigit OctalDigit | ZeroToThree OctalDigit OctalDigit Any octal escape sequence followed by
+     * non-octal digits can be confusing, e.g. "\038" is interpreted as the octal escape sequence "\03" followed by the
+     * literal character "8". <h2>Example</h2>
+     * 
+     * <pre>
+     * public void foo() {
+     *     // interpreted as octal 12, followed by character '8'
+     *     System.out.println(&quot;suspicious: \128&quot;);
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String SUSPICIOUS_OCTAL_ESCAPE                           = "SuspiciousOctalEscape";
+
+    /**
+     * It is a good practice to call super() in a constructor. If super() is not called but another constructor (such as
+     * an overloaded constructor) is called, this rule will not report it. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends Bar {
+     *     public Foo() {
+     *         // call the constructor of Bar
+     *         super();
+     *     }
+     * 
+     *     public Foo(int code) {
+     *         // do something with code
+     *         this();
+     *         // no problem with this
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String CALL_SUPER_IN_CONSTRUCTOR                         = "CallSuperInConstructor";
+
+    /**
+     * Sometimes expressions are wrapped in unnecessary parentheses, making them look like function calls. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     boolean bar() {
+     *         return (true);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_PARENTHESES                           = "UnnecessaryParentheses";
+
+    /**
+     * Use explicit scoping instead of the default package private level.
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String DEFAULT_PACKAGE                                   = "DefaultPackage";
+
+    /**
+     * Use bitwise inversion to invert boolean values - it's the fastest way to do this. See
+     * http://www.javaspecialists.co.za/archive/newsletter.do?issue=042&locale=en_US for specific details <h2>Example</h2>
+     * 
+     * <pre>
+     * boolean b = true;
+     * b = !b; // slow
+     * b &circ;= true; // fast
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String BOOLEAN_INVERSION                                 = "BooleanInversion";
+
+    /**
+     * The dataflow analysis tracks local definitions, undefinitions and references to variables on different paths on
+     * the data flow. From those informations there can be found various problems. 1. UR - Anomaly: There is a reference
+     * to a variable that was not defined before. This is a bug and leads to an error. 2. DU - Anomaly: A recently
+     * defined variable is undefined. These anomalies may appear in normal source text. 3. DD - Anomaly: A recently
+     * defined variable is redefined. This is ominous but don't have to be a bug. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void foo() {
+     *     int buz = 5;
+     *     buz = 6; // redefinition of buz -&gt; dd-anomaly
+     *     foo(buz);
+     *     buz = 2;
+     * } // buz is undefined when leaving scope -&gt; du-anomaly
+     * </pre>
+     * 
+     * @since PMD 3.9
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String DATAFLOW_ANOMALY_ANALYSIS                         = "DataflowAnomalyAnalysis";
+
+    /**
+     * Avoid using final local variables, turn them into fields. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyClass {
+     *     public void foo() {
+     *         final String finalLocalVariable;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_FINAL_LOCAL_VARIABLE                        = "AvoidFinalLocalVariable";
+
+    /**
+     * Java uses the 'short' type to reduce memory usage, not to optimize calculation. In fact, the JVM does not have
+     * any arithmetic capabilities for the short type: the JVM must convert the short into an int, do the proper
+     * calculation and convert the int back to a short. Thus any storage gains found through use of the 'short' type may
+     * be offset by adverse impacts on performance. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class UsingShort {
+     *     private short doNotUseShort = 0;
+     * 
+     *     public UsingShort() {
+     *         short shouldNotBeUsed = 1;
+     *         doNotUseShort += shouldNotBeUsed;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_USING_SHORT_TYPE                            = "AvoidUsingShortType";
+
+    /**
+     * Use of the keyword 'volatile' is generally used to fine tune a Java application, and therefore, requires a good
+     * expertise of the Java Memory Model. Moreover, its range of action is somewhat misknown. Therefore, the volatile
+     * keyword should not be used for maintenance purpose and portability. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class ThrDeux {
+     *     private volatile String var1; // not suggested
+     *     private String          var2; // preferred
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_USING_VOLATILE                              = "AvoidUsingVolatile";
+
+    /**
+     * Unnecessary reliance on Java Native Interface (JNI) calls directly reduces application portability and increases
+     * the maintenance burden. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SomeJNIClass {
+     * 
+     *     public SomeJNIClass() {
+     *         System.loadLibrary(&quot;nativelib&quot;);
+     *     }
+     * 
+     *     static {
+     *         System.loadLibrary(&quot;nativelib&quot;);
+     *     }
+     * 
+     *     public void invalidCallsInMethod() throws SecurityException, NoSuchMethodException {
+     *         System.loadLibrary(&quot;nativelib&quot;);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_USING_NATIVE_CODE                           = "AvoidUsingNativeCode";
+
+    /**
+     * Methods such as getDeclaredConstructors(), getDeclaredConstructor(Class[]) and setAccessible(), as the interface
+     * PrivilegedAction, allows for the runtime alteration of variable, class, or method visibility, even if they are
+     * private. This violates the principle of encapsulation. <h2>Example</h2>
+     * 
+     * <pre>
+     * import java.lang.reflect.AccessibleObject;
+     * import java.lang.reflect.Method;
+     * import java.security.PrivilegedAction;
+     * 
+     * public class Violation {
+     *     public void invalidCallsInMethod() throws SecurityException, NoSuchMethodException {
+     *         // Possible call to forbidden getDeclaredConstructors
+     *         Class[] arrayOfClass = new Class[1];
+     *         this.getClass().getDeclaredConstructors();
+     *         this.getClass().getDeclaredConstructor(arrayOfClass);
+     *         Class clazz = this.getClass();
+     *         clazz.getDeclaredConstructor(arrayOfClass);
+     *         clazz.getDeclaredConstructors();
+     *         // Possible call to forbidden setAccessible
+     *         clazz.getMethod(&quot;&quot;, arrayOfClass).setAccessible(false);
+     *         AccessibleObject.setAccessible(null, false);
+     *         Method.setAccessible(null, false);
+     *         Method[] methodsArray = clazz.getMethods();
+     *         int nbMethod;
+     *         for (nbMethod = 0; nbMethod &lt; methodsArray.length; nbMethod++) {
+     *             methodsArray[nbMethod].setAccessible(false);
+     *         }
+     * 
+     *         // Possible call to forbidden PrivilegedAction
+     *         PrivilegedAction priv = (PrivilegedAction) new Object();
+     *         priv.run();
+     *     }
+     * }
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_ACCESSIBILITY_ALTERATION                    = "AvoidAccessibilityAlteration";
+
+    /**
+     * Calls to System.gc(), Runtime.getRuntime().gc(), and System.runFinalization() are not advised. Code should have
+     * the same behavior whether the garbage collection is disabled using the option -Xdisableexplicitgc or not.
+     * Moreover, "modern" jvms do a very good job handling garbage collections. If memory usage issues unrelated to
+     * memory leaks develop within an application, it should be dealt with JVM options rather than within the code
+     * itself. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class GCCall {
+     *     public GCCall() {
+     *         // Explicit gc call !
+     *         System.gc();
+     *     }
+     * 
+     *     public void doSomething() {
+     *     // Explicit gc call !
+     *        Runtime.getRuntime().gc();
+     *     }
+     * 
+     *     public explicitGCcall() { // Explicit gc call ! System.gc(); }
+     * 
+     *     public void doSomething() { // Explicit gc call ! Runtime.getRuntime().gc(); }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String DO_NOT_CALL_GARBAGE_COLLECTION_EXPLICITLY         = "DoNotCallGarbageCollectionExplicitly";
+
+    /**
+     * Java allows the use of several variables declaration of the same type on one line. However, it can lead to quite
+     * messy code. This rule looks for several declarations on the same line. <h2>Example</h2>
+     * 
+     * <pre>
+     * String name, lastname; // combined declaration, a violation
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String ONE_DECLARATION_PER_LINE                          = "OneDeclarationPerLine";
+
+    /**
+     * Prefixing parameters by 'in' or 'out' pollutes the name of the parameters and reduces code readability. To
+     * indicate whether or not a parameter will be modify in a method, its better to document method behavior with
+     * Javadoc. <h2>Example</h2>
+     * 
+     * <pre>
+     * // Not really clear
+     * public class Foo {
+     *     public void bar(
+     *             int inLeftOperand,
+     *             Result outRightOperand) {
+     *         outRightOperand.setValue(inLeftOperand * outRightOperand.getValue());
+     *     }
+     * }
+     * 
+     * // Far more useful
+     * public class Foo {
+     *     public void bar(
+     *             final int leftOperand,
+     *             final Result rightOperand) {
+     *         rightOperand.setValue(leftOperand * rightOperand.getValue());
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_PREFIXING_METHOD_PARAMETERS                 = "AvoidPrefixingMethodParameters";
+
+    /**
+     * Avoid using hard-coded literals in conditional statements. By declaring them as static variables or private
+     * members with descriptive names maintainability is enhanced. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Literals {
+     *     private static final int TEN = 10;
+     * 
+     *     public void downCastPrimitiveType() {
+     * 
+     *         if (i == 10) { // magic number, buried in a method
+     *             doSomething();
+     *         }
+     * 
+     *         if (i == TEN) { // preferred approach
+     *             doSomething();
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_LITERALS_IN_IF_CONDITION                    = "AvoidLiteralsInIfCondition";
+
+    /**
+     * When you write a public method, you should be thinking in terms of an API. If your method is public, it means
+     * other class will use it, therefore, you want (or need) to offer a comprehensive and evolutive API. If you pass a
+     * lot of information as a simple series of Strings, you may think of using an Object to represent all those
+     * information. You'll get a simplier API (such as doWork(Workload workload), rather than a tedious series of
+     * Strings) and more importantly, if you need at some point to pass extra data, you'll be able to do so by simply
+     * modifying or extending Workload without any modification to your API. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyClass {
+     *     public void connect(String username,
+     *             String pssd,
+     *             String databaseName,
+     *             String databaseAdress)
+     *     // Instead of those parameters object
+     *     // would ensure a cleaner API and permit
+     *     // to add extra data transparently (no code change):
+     *     // void connect(UserData data);
+     *     {
+     * 
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_OBJECT_FOR_CLEARER_API                        = "UseObjectForClearerAPI";
+
+    /**
+     * Since Java5 brought a new implementation of the Map designed for multi-threaded access, you can perform efficient
+     * map reads without blocking other threads. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class ConcurrentApp {
+     *     public void getMyInstance() {
+     *         Map map1 = new HashMap(); // fine for single-threaded access
+     *         Map map2 = new ConcurrentHashMap(); // preferred for use with multiple threads
+     * 
+     *         // the following case will be ignored by this rule
+     *         Map map3 = someModule.methodThatReturnMap(); // might be OK, if the returned map is already thread-safe
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_CONCURRENT_HASH_MAP                           = "UseConcurrentHashMap";
 
     /**
      * This rule counts the number of unique attributes, local variables, and return types within an object. A number
@@ -999,6 +1618,56 @@ public final class PMDWarnings {
      *     public void doWork() {
      *     }
      * }
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      * 
      * 
      * 
