@@ -46,66 +46,18 @@ public final class PMDWarnings {
      * <pre>
      * public class Foo {
      *     void bar() {
-     *         for (;true;) true; // No Init or Update part, may as well be: while (true)
+     *         // No Init or Update part, may as well be: while (true)
+     *         for (; true;) {
+     *             // do stuff..
+     *         }
      *     }
      * }
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      * </pre>
      * 
      * @since PMD 1.02
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String FOR_LOOP_SHOULD_BE_WHILE_LOOP                     = "ForLoopShouldBeWhileLoop";
+    public static final String FOR_LOOP_SHOULD_BE_WHILE_LOOP                     = "PMD.ForLoopShouldBeWhileLoop";
 
     /**
      * Override both public boolean Object.equals(Object other), and public int Object.hashCode(), or override neither.
@@ -139,7 +91,7 @@ public final class PMDWarnings {
      * @since PMD 0.4
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String OVERRIDE_BOTH_EQUALS_AND_HASHCODE                 = "OverrideBothEqualsAndHashcode";
+    public static final String OVERRIDE_BOTH_EQUALS_AND_HASHCODE                 = "PMD.OverrideBothEqualsAndHashcode";
 
     /**
      * Partially created objects can be returned by the Double Checked Locking pattern when used in Java. An optimizing
@@ -168,7 +120,7 @@ public final class PMDWarnings {
      *      href="http://www.javaworld.com/javaworld/jw-02-2001/jw-0209-double.html">http://www.javaworld.com/javaworld/jw-02-2001/jw-0209-double.html</a>
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String DOUBLE_CHECKED_LOCKING                            = "DoubleCheckedLocking";
+    public static final String DOUBLE_CHECKED_LOCKING                            = "PMD.DoubleCheckedLocking";
 
     /**
      * Avoid returning from a finally block, this can discard exceptions. <h2>Example</h2>
@@ -190,7 +142,7 @@ public final class PMDWarnings {
      * @since PMD 1.05
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String RETURN_FROM_FINALLY_BLOCK                         = "ReturnFromFinallyBlock";
+    public static final String RETURN_FROM_FINALLY_BLOCK                         = "PMD.ReturnFromFinallyBlock";
 
     /**
      * Do not use "if" statements whose conditionals are always true or always false. <h2>Example</h2>
@@ -208,7 +160,7 @@ public final class PMDWarnings {
      * @since PMD 1.5
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String UNCONDITIONAL_IF_STATEMENT                        = "UnconditionalIfStatement";
+    public static final String UNCONDITIONAL_IF_STATEMENT                        = "PMD.UnconditionalIfStatement";
 
     /**
      * Avoid instantiating Boolean objects; you can reference Boolean.TRUE, Boolean.FALSE, or call Boolean.valueOf()
@@ -222,7 +174,7 @@ public final class PMDWarnings {
      * @since PMD 1.2
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String BOOLEAN_INSTANTIATION                             = "BooleanInstantiation";
+    public static final String BOOLEAN_INSTANTIATION                             = "PMD.BooleanInstantiation";
 
     /**
      * Sometimes two consecutive 'if' statements can be consolidated by separating their conditions with a boolean
@@ -247,7 +199,7 @@ public final class PMDWarnings {
      * @since PMD 3.1
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String COLLAPSIBLE_IF_STATEMENTS                         = "CollapsibleIfStatements";
+    public static final String COLLAPSIBLE_IF_STATEMENTS                         = "PMD.CollapsibleIfStatements";
 
     /**
      * When deriving an array of a specific class from your Collection, one should provide an array of the same class as
@@ -268,7 +220,7 @@ public final class PMDWarnings {
      * @since PMD 3.4
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String CLASS_CAST_EXCEPTION_WITH_TO_ARRAY                = "ClassCastExceptionWithToArray";
+    public static final String CLASS_CAST_EXCEPTION_WITH_TO_ARRAY                = "PMD.ClassCastExceptionWithToArray";
 
     /**
      * One might assume that the result of "new BigDecimal(0.1)" is exactly equal to 0.1, but it is actually equal to
@@ -288,7 +240,7 @@ public final class PMDWarnings {
      * @since PMD 3.4
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_DECIMAL_LITERALS_IN_BIG_DECIMAL_CONSTRUCTOR = "AvoidDecimalLiteralsInBigDecimalConstructor";
+    public static final String AVOID_DECIMAL_LITERALS_IN_BIG_DECIMAL_CONSTRUCTOR = "PMD.AvoidDecimalLiteralsInBigDecimalConstructor";
 
     /**
      * The null check here is misplaced. If the variable is null a {@link NullPointerException} will be thrown. Either
@@ -313,7 +265,7 @@ public final class PMDWarnings {
      * @since PMD 3.5
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String MISPLACED_NULL_CHECK                              = "MisplacedNullCheck";
+    public static final String MISPLACED_NULL_CHECK                              = "PMD.MisplacedNullCheck";
 
     /**
      * Avoid using java.lang.ThreadGroup; although it is intended to be used in a threaded environment it contains
@@ -333,7 +285,7 @@ public final class PMDWarnings {
      * @since PMD 3.6
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_THREAD_GROUP                                = "AvoidThreadGroup";
+    public static final String AVOID_THREAD_GROUP                                = "PMD.AvoidThreadGroup";
 
     /**
      * The null check is broken since it will throw a NullPointerException itself. It is likely that you used || instead
@@ -353,7 +305,7 @@ public final class PMDWarnings {
      * @since PMD 3.8
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String BROKEN_NULL_CHECK                                 = "BrokenNullCheck";
+    public static final String BROKEN_NULL_CHECK                                 = "PMD.BrokenNullCheck";
 
     /**
      * Don't create instances of already existing BigInteger (BigInteger.ZERO, BigInteger.ONE) and for Java 1.5 onwards,
@@ -368,7 +320,7 @@ public final class PMDWarnings {
      * @since PMD 3.9
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String BIG_INTEGER_INSTANTIATION                         = "BigIntegerInstantiation";
+    public static final String BIG_INTEGER_INSTANTIATION                         = "PMD.BigIntegerInstantiation";
 
     /**
      * Integer literals should not start with zero since this denotes that the rest of literal will be interpreted as an
@@ -382,7 +334,7 @@ public final class PMDWarnings {
      * @since PMD 3.9
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_USING_OCTAL_VALUES                          = "AvoidUsingOctalValues";
+    public static final String AVOID_USING_OCTAL_VALUES                          = "PMD.AvoidUsingOctalValues";
 
     /**
      * Application with hard-coded IP addresses can become impossible to deploy in some cases. Externalizing IP adresses
@@ -397,7 +349,7 @@ public final class PMDWarnings {
      * @since 4.1
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_USING_HARD_CODED_IP                         = "AvoidUsingHardCodedIP";
+    public static final String AVOID_USING_HARD_CODED_IP                         = "PMD.AvoidUsingHardCodedIP";
 
     /**
      * Always check the return values of navigation methods (next, previous, first, last) of a ResultSet. If the value
@@ -419,7 +371,7 @@ public final class PMDWarnings {
      * @since PMD 4.1
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String CHECK_RESULT_SET                                  = "CheckResultSet";
+    public static final String CHECK_RESULT_SET                                  = "PMD.CheckResultSet";
 
     /**
      * The use of multiple unary operators may be problematic, and/or confusing. Ensure that the intended usage is not a
@@ -446,7 +398,7 @@ public final class PMDWarnings {
      * @since PMD 4.2
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_MULTIPLE_UNARY_OPERATORS                    = "AvoidMultipleUnaryOperators";
+    public static final String AVOID_MULTIPLE_UNARY_OPERATORS                    = "PMD.AvoidMultipleUnaryOperators";
 
     /**
      * No need to explicitly extend Object. <h2>Example</h2>
@@ -459,7 +411,7 @@ public final class PMDWarnings {
      * @since PMD 5.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String EXTENDS_OBJECT                                    = "ExtendsObject";
+    public static final String EXTENDS_OBJECT                                    = "PMD.ExtendsObject";
 
     /**
      * The skip() method may skip a smaller number of bytes than requested. Check the returned value to find out if it
@@ -487,7 +439,7 @@ public final class PMDWarnings {
      * @since PMD 5.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String CHECK_SKIP_RESULT                                 = "CheckSkipResult";
+    public static final String CHECK_SKIP_RESULT                                 = "PMD.CheckSkipResult";
 
     /**
      * Using a branching statement as the last part of a loop may be a bug, and/or is confusing. Ensure that the usage
@@ -513,7 +465,7 @@ public final class PMDWarnings {
      * @since PMD 5.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String AVOID_BRANCHING_STATEMENT_AS_LAST_IN_LOOP         = "AvoidBranchingStatementAsLastInLoop";
+    public static final String AVOID_BRANCHING_STATEMENT_AS_LAST_IN_LOOP         = "PMD.AvoidBranchingStatementAsLastInLoop";
 
     /**
      * Explicitly calling Thread.run() method will execute in the caller's thread of control. Instead, call
@@ -527,7 +479,7 @@ public final class PMDWarnings {
      * @since PMD 4.3
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String DONT_CALL_THREAD_RUN                              = "DontCallThreadRun";
+    public static final String DONT_CALL_THREAD_RUN                              = "PMD.DontCallThreadRun";
 
     /**
      * Don't use floating point for loop indices. If you must use floating point, use double unless you're certain that
@@ -550,7 +502,7 @@ public final class PMDWarnings {
      * @since PMD 4.3
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
-    public static final String DONT_USE_FLOAT_TYPE_FOR_LOOP_INDICES              = "DontUseFloatTypeForLoopIndices";
+    public static final String DONT_USE_FLOAT_TYPE_FOR_LOOP_INDICES              = "PMD.DontUseFloatTypeForLoopIndices";
 
     /**
      * Avoid using if statements without using braces to surround the code block. If the code formatting or indentation
@@ -568,7 +520,7 @@ public final class PMDWarnings {
      * @since PMD 1.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
-    public static final String IF_STMTS_MUST_USE_BRACES                          = "IfSTmtsMustUseBraces";
+    public static final String IF_STMTS_MUST_USE_BRACES                          = "PMD.IfSTmtsMustUseBraces";
 
     /**
      * Avoid using 'while' statements without using braces to surround the code block. If the code formatting or
@@ -587,7 +539,7 @@ public final class PMDWarnings {
      * @since PMD 0.7
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
-    public static final String WHILE_LOOPS_MUST_USE_BRACES                       = "WhileLoopsMustUseBraces";
+    public static final String WHILE_LOOPS_MUST_USE_BRACES                       = "PMD.WhileLoopsMustUseBraces";
 
     /**
      * Avoid using if..else statements without using surrounding braces. If the code formatting or indentation is lost
@@ -608,7 +560,7 @@ public final class PMDWarnings {
      * @since PMD 0.2
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
-    public static final String IF_ELSE_STATEMENTS_MUST_USE_BRACES                = "IfElseStmtsMustUseBraces";
+    public static final String IF_ELSE_STATEMENTS_MUST_USE_BRACES                = "PMD.IfElseStmtsMustUseBraces";
 
     /**
      * Avoid using 'for' statements without using curly braces. If the code formatting or indentation is lost then it
@@ -622,7 +574,7 @@ public final class PMDWarnings {
      * @since PMD 0.7
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
-    public static final String FOR_LOOPS_MUST_USE_BRACES                         = "ForLoopsMustUseBraces";
+    public static final String FOR_LOOPS_MUST_USE_BRACES                         = "PMD.ForLoopsMustUseBraces";
 
     /**
      * Object clone() should be implemented with super.clone(). <h2>Example</h2>
@@ -639,7 +591,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
-    public static final String PROPER_CLONE_IMPLEMENTATION                       = "ProperCloneImplementation";
+    public static final String PROPER_CLONE_IMPLEMENTATION                       = "PMD.ProperCloneImplementation";
 
     /**
      * The method clone() should throw a CloneNotSupportedException. <h2>Example</h2>
@@ -658,7 +610,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
-    public static final String CLONE_THROWS_CLONE_NOT_SUPPORTED_EXCEPTION        = "CloneThrowsCloneNotSupportedException";
+    public static final String CLONE_THROWS_CLONE_NOT_SUPPORTED_EXCEPTION        = "PMD.CloneThrowsCloneNotSupportedException";
 
     /**
      * The method clone() should only be implemented if the class implements the Cloneable interface with the exception
@@ -676,7 +628,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
-    public static final String CLONE_METHOD_MUST_IMPLEMENT_CLONEABLE             = "CloneMethodMustImplementCloneable";
+    public static final String CLONE_METHOD_MUST_IMPLEMENT_CLONEABLE             = "PMD.CloneMethodMustImplementCloneable";
 
     /**
      * The NPath complexity of a method is the number of acyclic execution paths through that method. A threshold of 200
@@ -718,7 +670,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String NPATH_COMPLEXITY                                  = "NPathComplexity";
+    public static final String NPATH_COMPLEXITY                                  = "PMD.NPathComplexity";
 
     /**
      * When methods are excessively long this usually indicates that the method is doing more than its name/signature
@@ -737,7 +689,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String EXCESSIVE_METHOD_LENGTH                           = "ExcessiveMethodLength";
+    public static final String EXCESSIVE_METHOD_LENGTH                           = "PMD.ExcessiveMethodLength";
 
     /**
      * Methods with numerous parameters are a challenge to maintain, especially if most of them share the same datatype.
@@ -761,7 +713,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String EXCESSIVE_PARAMETER_LIST                          = "ExcessiveParameterList";
+    public static final String EXCESSIVE_PARAMETER_LIST                          = "PMD.ExcessiveParameterList";
 
     /**
      * Excessive class file lengths are usually indications that the class may be burdened with excessive
@@ -792,7 +744,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String EXCESSIVE_CLASS_LENGTH                            = "ExcessiveClassLength";
+    public static final String EXCESSIVE_CLASS_LENGTH                            = "PMD.ExcessiveClassLength";
 
     /**
      * Complexity directly affects maintenance costs is determined by the number of decision points in a method plus one
@@ -843,7 +795,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String CYCLOMATIC_COMPLEXITY                             = "CyclomaticComplexity";
+    public static final String CYCLOMATIC_COMPLEXITY                             = "PMD.CyclomaticComplexity";
 
     /**
      * Classes with large numbers of public methods and attributes require disproportionate testing efforts since
@@ -874,7 +826,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String EXCESSIVE_PUBLIC_COUNT                            = "ExcessivePublicCount";
+    public static final String EXCESSIVE_PUBLIC_COUNT                            = "PMD.ExcessivePublicCount";
 
     /**
      * Classes that have too many fields can become unwieldy and could be redesigned to have fewer fields, possibly
@@ -900,7 +852,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String TOO_MANY_FIELDS                                   = "TooManyFields";
+    public static final String TOO_MANY_FIELDS                                   = "PMD.TooManyFields";
 
     /**
      * This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of lines of code for
@@ -922,7 +874,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String NCSS_METHOD_COUNT                                 = "NcssMethodCount";
+    public static final String NCSS_METHOD_COUNT                                 = "PMD.NcssMethodCount";
 
     /**
      * This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of lines of code for
@@ -944,7 +896,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String NCSS_TYPE_COUNT                                   = "NcssTypeCount";
+    public static final String NCSS_TYPE_COUNT                                   = "PMD.NcssTypeCount";
 
     /**
      * This rule uses the NCSS (Non-Commenting Source Statements) algorithm to determine the number of lines of code for
@@ -966,7 +918,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String NCSS_CONSTRUCTOR_COUNT                            = "NcssConstructorCount";
+    public static final String NCSS_CONSTRUCTOR_COUNT                            = "PMD.NcssConstructorCount";
 
     /**
      * A class with too many methods is probably a good suspect for refactoring, in order to reduce its complexity and
@@ -976,7 +928,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
-    public static final String TOO_MANY_METHODS                                  = "TooManyMethods";
+    public static final String TOO_MANY_METHODS                                  = "PMD.TooManyMethods";
 
     /**
      * Denotes whether comments are required (or unwanted) for specific language elements.
@@ -985,7 +937,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
-    public static final String COMMENT_REQUIRED                                  = "CommentRequired";
+    public static final String COMMENT_REQUIRED                                  = "PMD.CommentRequired";
 
     /**
      * Determines whether the dimensions of non-header comments found are within the specified limits.
@@ -994,7 +946,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
-    public static final String COMMENT_SIZE                                      = "CommentSize";
+    public static final String COMMENT_SIZE                                      = "PMD.CommentSize";
 
     /**
      * A rule for the politically correct... we don't want to offend anyone.
@@ -1003,7 +955,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
-    public static final String COMMENT_CONTENT                                   = "CommentContent";
+    public static final String COMMENT_CONTENT                                   = "PMD.CommentContent";
 
     /**
      * This rule detects when a constructor is not necessary; i.e., when there is only one constructor, its public, has
@@ -1020,7 +972,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String UNNECESSARY_CONSTRUCTOR                           = "UnnecessaryConstructor";
+    public static final String UNNECESSARY_CONSTRUCTOR                           = "PMD.UnnecessaryConstructor";
 
     /**
      * Assigning a "null" to a variable (outside of its declaration) is usually bad form. Sometimes, this type of
@@ -1042,7 +994,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String NULL_ASSIGNMENT                                   = "NullAssignment";
+    public static final String NULL_ASSIGNMENT                                   = "PMD.NullAssignment";
 
     /**
      * A method should have only one exit point, and that should be the last statement in the method. <h2>Example</h2>
@@ -1062,7 +1014,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String ONLY_ONE_RETURN                                   = "OnlyOneReturn";
+    public static final String ONLY_ONE_RETURN                                   = "PMD.OnlyOneReturn";
 
     /**
      * Avoid assignments in operands; this can make code more complicated and harder to read. <h2>Example</h2>
@@ -1080,7 +1032,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String ASSIGNMENT_IN_OPERAND                             = "AssignmentInOperand";
+    public static final String ASSIGNMENT_IN_OPERAND                             = "PMD.AssignmentInOperand";
 
     /**
      * Each class should declare at least one constructor. <h2>Example</h2>
@@ -1097,7 +1049,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AT_LEAST_ONE_CONSTRUCTOR                          = "AtLeastOneConstructor";
+    public static final String AT_LEAST_ONE_CONSTRUCTOR                          = "PMD.AtLeastOneConstructor";
 
     /**
      * Avoid importing anything from the 'sun.*' packages. These packages are not portable and are likely to change. <h2>
@@ -1105,55 +1057,13 @@ public final class PMDWarnings {
      * 
      * <pre>
      * import sun.misc.foo;
-     * 
-     * public class Foo {
-     * }
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      * </pre>
      * 
      * @since PMD 1.5
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String DONT_IMPORT_SUN                                   = "DontImportSun";
+    public static final String DONT_IMPORT_SUN                                   = "PMD.DontImportSun";
 
     /**
      * A suspicious octal escape sequence was found inside a String literal. The Java language specification (section
@@ -1173,7 +1083,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String SUSPICIOUS_OCTAL_ESCAPE                           = "SuspiciousOctalEscape";
+    public static final String SUSPICIOUS_OCTAL_ESCAPE                           = "PMD.SuspiciousOctalEscape";
 
     /**
      * It is a good practice to call super() in a constructor. If super() is not called but another constructor (such as
@@ -1198,7 +1108,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String CALL_SUPER_IN_CONSTRUCTOR                         = "CallSuperInConstructor";
+    public static final String CALL_SUPER_IN_CONSTRUCTOR                         = "PMD.CallSuperInConstructor";
 
     /**
      * Sometimes expressions are wrapped in unnecessary parentheses, making them look like function calls. <h2>Example</h2>
@@ -1215,7 +1125,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String UNNECESSARY_PARENTHESES                           = "UnnecessaryParentheses";
+    public static final String UNNECESSARY_PARENTHESES                           = "PMD.UnnecessaryParentheses";
 
     /**
      * Use explicit scoping instead of the default package private level.
@@ -1224,7 +1134,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String DEFAULT_PACKAGE                                   = "DefaultPackage";
+    public static final String DEFAULT_PACKAGE                                   = "PMD.DefaultPackage";
 
     /**
      * Use bitwise inversion to invert boolean values - it's the fastest way to do this. See
@@ -1240,7 +1150,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String BOOLEAN_INVERSION                                 = "BooleanInversion";
+    public static final String BOOLEAN_INVERSION                                 = "PMD.BooleanInversion";
 
     /**
      * The dataflow analysis tracks local definitions, undefinitions and references to variables on different paths on
@@ -1262,7 +1172,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String DATAFLOW_ANOMALY_ANALYSIS                         = "DataflowAnomalyAnalysis";
+    public static final String DATAFLOW_ANOMALY_ANALYSIS                         = "PMD.DataflowAnomalyAnalysis";
 
     /**
      * Avoid using final local variables, turn them into fields. <h2>Example</h2>
@@ -1279,7 +1189,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_FINAL_LOCAL_VARIABLE                        = "AvoidFinalLocalVariable";
+    public static final String AVOID_FINAL_LOCAL_VARIABLE                        = "PMD.AvoidFinalLocalVariable";
 
     /**
      * Java uses the 'short' type to reduce memory usage, not to optimize calculation. In fact, the JVM does not have
@@ -1302,7 +1212,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_USING_SHORT_TYPE                            = "AvoidUsingShortType";
+    public static final String AVOID_USING_SHORT_TYPE                            = "PMD.AvoidUsingShortType";
 
     /**
      * Use of the keyword 'volatile' is generally used to fine tune a Java application, and therefore, requires a good
@@ -1320,7 +1230,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_USING_VOLATILE                              = "AvoidUsingVolatile";
+    public static final String AVOID_USING_VOLATILE                              = "PMD.AvoidUsingVolatile";
 
     /**
      * Unnecessary reliance on Java Native Interface (JNI) calls directly reduces application portability and increases
@@ -1347,7 +1257,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_USING_NATIVE_CODE                           = "AvoidUsingNativeCode";
+    public static final String AVOID_USING_NATIVE_CODE                           = "PMD.AvoidUsingNativeCode";
 
     /**
      * Methods such as getDeclaredConstructors(), getDeclaredConstructor(Class[]) and setAccessible(), as the interface
@@ -1355,10 +1265,6 @@ public final class PMDWarnings {
      * private. This violates the principle of encapsulation. <h2>Example</h2>
      * 
      * <pre>
-     * import java.lang.reflect.AccessibleObject;
-     * import java.lang.reflect.Method;
-     * import java.security.PrivilegedAction;
-     * 
      * public class Violation {
      *     public void invalidCallsInMethod() throws SecurityException, NoSuchMethodException {
      *         // Possible call to forbidden getDeclaredConstructors
@@ -1383,31 +1289,13 @@ public final class PMDWarnings {
      *         priv.run();
      *     }
      * }
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      * </pre>
      * 
      * @since PMD 4.1
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_ACCESSIBILITY_ALTERATION                    = "AvoidAccessibilityAlteration";
+    public static final String AVOID_ACCESSIBILITY_ALTERATION                    = "PMD.AvoidAccessibilityAlteration";
 
     /**
      * Calls to System.gc(), Runtime.getRuntime().gc(), and System.runFinalization() are not advised. Code should have
@@ -1438,33 +1326,23 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String DO_NOT_CALL_GARBAGE_COLLECTION_EXPLICITLY         = "DoNotCallGarbageCollectionExplicitly";
+    public static final String DO_NOT_CALL_GARBAGE_COLLECTION_EXPLICITLY         = "PMD.DoNotCallGarbageCollectionExplicitly";
 
     /**
      * Java allows the use of several variables declaration of the same type on one line. However, it can lead to quite
      * messy code. This rule looks for several declarations on the same line. <h2>Example</h2>
      * 
      * <pre>
-     * String name, lastname; // combined declaration, a violation
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
+     * public class OneDeclaration {
+     *     String name, lastname; // combined declaration, a violation
+     * }
      * </pre>
      * 
      * @since PMD 5.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String ONE_DECLARATION_PER_LINE                          = "OneDeclarationPerLine";
+    public static final String ONE_DECLARATION_PER_LINE                          = "PMD.OneDeclarationPerLine";
 
     /**
      * Prefixing parameters by 'in' or 'out' pollutes the name of the parameters and reduces code readability. To
@@ -1495,7 +1373,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_PREFIXING_METHOD_PARAMETERS                 = "AvoidPrefixingMethodParameters";
+    public static final String AVOID_PREFIXING_METHOD_PARAMETERS                 = "PMD.AvoidPrefixingMethodParameters";
 
     /**
      * Avoid using hard-coded literals in conditional statements. By declaring them as static variables or private
@@ -1522,7 +1400,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String AVOID_LITERALS_IN_IF_CONDITION                    = "AvoidLiteralsInIfCondition";
+    public static final String AVOID_LITERALS_IN_IF_CONDITION                    = "PMD.AvoidLiteralsInIfCondition";
 
     /**
      * When you write a public method, you should be thinking in terms of an API. If your method is public, it means
@@ -1552,7 +1430,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String USE_OBJECT_FOR_CLEARER_API                        = "UseObjectForClearerAPI";
+    public static final String USE_OBJECT_FOR_CLEARER_API                        = "PMD.UseObjectForClearerAPI";
 
     /**
      * Since Java5 brought a new implementation of the Map designed for multi-threaded access, you can perform efficient
@@ -1574,7 +1452,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
-    public static final String USE_CONCURRENT_HASH_MAP                           = "UseConcurrentHashMap";
+    public static final String USE_CONCURRENT_HASH_MAP                           = "PMD.UseConcurrentHashMap";
 
     /**
      * This rule counts the number of unique attributes, local variables, and return types within an object. A number
@@ -1603,7 +1481,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
-    public static final String COUPLING_BETWEEN_OBJECTS                          = "CouplingBetweenObjects";
+    public static final String COUPLING_BETWEEN_OBJECTS                          = "PMD.CouplingBetweenObjects";
 
     /**
      * A high number of imports can indicate a high degree of coupling within an object. This rule counts the number of
@@ -1632,58 +1510,13 @@ public final class PMDWarnings {
      * 
      * 
      * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
      * </pre>
      * 
      * @since PMD 1.04
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
-    public static final String EXCESSIVE_IMPORTS                                 = "ExcessiveImports";
+    public static final String EXCESSIVE_IMPORTS                                 = "PMD.ExcessiveImports";
 
     /**
      * The use of implementation types as object references limits your ability to use alternate implementations in the
@@ -1706,7 +1539,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
-    public static final String LOOSE_COUPLING                                    = "LooseCoupling";
+    public static final String LOOSE_COUPLING                                    = "PMD.LooseCoupling";
 
     /**
      * Avoid using classes from the configured package hierarchy outside of the package hierarchy, except when using one
@@ -1726,7 +1559,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
-    public static final String LOOSE_PACKAGE_COUPLING                            = "LoosePackageCoupling";
+    public static final String LOOSE_PACKAGE_COUPLING                            = "PMD.LoosePackageCoupling";
 
     /**
      * The Law of Demeter is a simple rule, that says "only talk to friends". It helps to reduce coupling between
@@ -1760,7 +1593,7 @@ public final class PMDWarnings {
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
-    public static final String LAW_OF_DEMETER                                    = "LawOfDemeter";
+    public static final String LAW_OF_DEMETER                                    = "PMD.LawOfDemeter";
 
     // TODO: Add design rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/design.html
     // TODO: Add empty code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html
