@@ -1798,7 +1798,104 @@ public final class PMDWarnings {
      */
     public static final String EMPTY_STATIC_INITIALIZER                          = "PMD.EmptyStaticInitializer";
 
-    // TODO: Add finanlizer rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html
+    /**
+     * Empty finalize methods serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     protected void finalize() {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_FINANLIZER                                  = "PMD.EmptyFinalizer";
+
+    /**
+     * If the finalize() is implemented, it should do something besides just calling super.finalize(). <h2>Example</h2>
+     * 
+     * <pre>
+     * protected void finalize() {
+     *     super.finalize();
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String FINALIZE_ONLY_CALLS_SUPER_FINALIZE                = "PMD.FinalizeOnlyCallsSuperFinalize";
+
+    /**
+     * Methods named finalize() should not have parameters. It is confusing and most likely an attempt to overload
+     * Object.finalize(). It will not be called by the VM. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     // this is confusing and probably a bug
+     *     protected void finalize(int a) {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String FINALIZE_OVERLOADED                               = "PMD.FinalizeOverloaded";
+
+    /**
+     * If the finalize() is implemented, its last action should be to call super.finalize. <h2>Example</h2>
+     * 
+     * <pre>
+     * protected void finalize() {
+     *     something();
+     *     // neglected to call super.finalize()
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String FINALIZE_DOES_NOT_CALL_SUPER_FINALIZE             = "PMD.FinalizeDoesNotCallSuperFinalize";
+
+    /**
+     * When overriding the finalize(), the new method should be set as protected. If made public, other classes may
+     * invoke it at inappropriate times. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void finalize() {
+     *     // do something
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String FINALIZE_SHOULD_BE_PROTECTED                      = "PMD.FinalizeShouldBeProtected";
+
+    /**
+     * The method Object.finalize() is called by the garbage collector on an object when garbage collection determines
+     * that there are no more references to the object. It should not be invoked by application logic. <h2>Example</h2>
+     * 
+     * <pre>
+     * void foo() {
+     *     Bar b = new Bar();
+     *     b.finalize();
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_CALLING_FINALIZE                            = "PMD.AvoidCallingFinalize";
+
     // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html
     // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html
     // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html
