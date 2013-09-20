@@ -10,7 +10,7 @@ package com.github.sebhoss.common.annotation;
  * List of PMD warnings which can be suppressed by the {@link SuppressWarnings} annotation.
  * 
  * @see <a
- *      href="http://pmd.sourceforge.net/pmd-5.0.1/suppressing.html">http://pmd.sourceforge.net/pmd-5.0.1/suppressing.html</a>
+ *      href="http://pmd.sourceforge.net/pmd-5.0.5/suppressing.html">http://pmd.sourceforge.net/pmd-5.0.5/suppressing.html</a>
  */
 @SuppressWarnings(CompilerWarnings.NLS)
 public final class PMDWarnings {
@@ -36,7 +36,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String JUMBLED_INCREMENTER                               = "PMD.JumbledIncrementer";
 
@@ -55,7 +55,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.02
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String FOR_LOOP_SHOULD_BE_WHILE_LOOP                     = "PMD.ForLoopShouldBeWhileLoop";
 
@@ -89,7 +89,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String OVERRIDE_BOTH_EQUALS_AND_HASHCODE                 = "PMD.OverrideBothEqualsAndHashcode";
 
@@ -118,7 +118,7 @@ public final class PMDWarnings {
      * @since PMD 1.04
      * @see <a
      *      href="http://www.javaworld.com/javaworld/jw-02-2001/jw-0209-double.html">http://www.javaworld.com/javaworld/jw-02-2001/jw-0209-double.html</a>
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String DOUBLE_CHECKED_LOCKING                            = "PMD.DoubleCheckedLocking";
 
@@ -140,7 +140,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.05
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String RETURN_FROM_FINALLY_BLOCK                         = "PMD.ReturnFromFinallyBlock";
 
@@ -158,7 +158,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String UNCONDITIONAL_IF_STATEMENT                        = "PMD.UnconditionalIfStatement";
 
@@ -172,7 +172,7 @@ public final class PMDWarnings {
      * </br>
      * 
      * @since PMD 1.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String BOOLEAN_INSTANTIATION                             = "PMD.BooleanInstantiation";
 
@@ -197,7 +197,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String COLLAPSIBLE_IF_STATEMENTS                         = "PMD.CollapsibleIfStatements";
 
@@ -218,7 +218,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String CLASS_CAST_EXCEPTION_WITH_TO_ARRAY                = "PMD.ClassCastExceptionWithToArray";
 
@@ -238,7 +238,7 @@ public final class PMDWarnings {
      * </code></br>
      * 
      * @since PMD 3.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_DECIMAL_LITERALS_IN_BIG_DECIMAL_CONSTRUCTOR = "PMD.AvoidDecimalLiteralsInBigDecimalConstructor";
 
@@ -263,7 +263,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String MISPLACED_NULL_CHECK                              = "PMD.MisplacedNullCheck";
 
@@ -283,7 +283,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_THREAD_GROUP                                = "PMD.AvoidThreadGroup";
 
@@ -303,7 +303,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.8
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String BROKEN_NULL_CHECK                                 = "PMD.BrokenNullCheck";
 
@@ -318,7 +318,7 @@ public final class PMDWarnings {
      * </code></br>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String BIG_INTEGER_INSTANTIATION                         = "PMD.BigIntegerInstantiation";
 
@@ -332,7 +332,7 @@ public final class PMDWarnings {
      * </br>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_USING_OCTAL_VALUES                          = "PMD.AvoidUsingOctalValues";
 
@@ -347,7 +347,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_USING_HARD_CODED_IP                         = "PMD.AvoidUsingHardCodedIP";
 
@@ -369,7 +369,7 @@ public final class PMDWarnings {
      * </code></br>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String CHECK_RESULT_SET                                  = "PMD.CheckResultSet";
 
@@ -396,7 +396,7 @@ public final class PMDWarnings {
      * </code></br>
      * 
      * @since PMD 4.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_MULTIPLE_UNARY_OPERATORS                    = "PMD.AvoidMultipleUnaryOperators";
 
@@ -409,7 +409,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String EXTENDS_OBJECT                                    = "PMD.ExtendsObject";
 
@@ -437,7 +437,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String CHECK_SKIP_RESULT                                 = "PMD.CheckSkipResult";
 
@@ -463,7 +463,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String AVOID_BRANCHING_STATEMENT_AS_LAST_IN_LOOP         = "PMD.AvoidBranchingStatementAsLastInLoop";
 
@@ -477,7 +477,7 @@ public final class PMDWarnings {
      * </br>
      * 
      * @since PMD 4.3
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String DONT_CALL_THREAD_RUN                              = "PMD.DontCallThreadRun";
 
@@ -500,7 +500,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.3
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/basic.html">PMD Basic Rule Set Documentation</a>
      */
     public static final String DONT_USE_FLOAT_TYPE_FOR_LOOP_INDICES              = "PMD.DontUseFloatTypeForLoopIndices";
 
@@ -518,7 +518,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
     public static final String IF_STMTS_MUST_USE_BRACES                          = "PMD.IfSTmtsMustUseBraces";
 
@@ -537,7 +537,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.7
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
     public static final String WHILE_LOOPS_MUST_USE_BRACES                       = "PMD.WhileLoopsMustUseBraces";
 
@@ -558,7 +558,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
     public static final String IF_ELSE_STATEMENTS_MUST_USE_BRACES                = "PMD.IfElseStmtsMustUseBraces";
 
@@ -572,7 +572,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.7
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/braces.html">PMD Braces Rule Set Documentation</a>
      */
     public static final String FOR_LOOPS_MUST_USE_BRACES                         = "PMD.ForLoopsMustUseBraces";
 
@@ -588,7 +588,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
     public static final String PROPER_CLONE_IMPLEMENTATION                       = "PMD.ProperCloneImplementation";
@@ -607,7 +607,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
     public static final String CLONE_THROWS_CLONE_NOT_SUPPORTED_EXCEPTION        = "PMD.CloneThrowsCloneNotSupportedException";
@@ -625,7 +625,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/clone.html">PMD Clone Implementation Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/clone.html">PMD Clone Implementation Rule Set
      *      Documentation</a>
      */
     public static final String CLONE_METHOD_MUST_IMPLEMENT_CLONEABLE             = "PMD.CloneMethodMustImplementCloneable";
@@ -667,7 +667,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String NPATH_COMPLEXITY                                  = "PMD.NPathComplexity";
@@ -686,7 +686,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String EXCESSIVE_METHOD_LENGTH                           = "PMD.ExcessiveMethodLength";
@@ -710,7 +710,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String EXCESSIVE_PARAMETER_LIST                          = "PMD.ExcessiveParameterList";
@@ -741,7 +741,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String EXCESSIVE_CLASS_LENGTH                            = "PMD.ExcessiveClassLength";
@@ -792,7 +792,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.03
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String CYCLOMATIC_COMPLEXITY                             = "PMD.CyclomaticComplexity";
@@ -823,7 +823,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.04
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String EXCESSIVE_PUBLIC_COUNT                            = "PMD.ExcessivePublicCount";
@@ -849,7 +849,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String TOO_MANY_FIELDS                                   = "PMD.TooManyFields";
@@ -871,7 +871,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String NCSS_METHOD_COUNT                                 = "PMD.NcssMethodCount";
@@ -893,7 +893,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String NCSS_TYPE_COUNT                                   = "PMD.NcssTypeCount";
@@ -915,7 +915,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String NCSS_CONSTRUCTOR_COUNT                            = "PMD.NcssConstructorCount";
@@ -925,7 +925,7 @@ public final class PMDWarnings {
      * find a way to have more fine grained objects.
      * 
      * @since PMD 4.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/codesize.html">PMD Code Size Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/codesize.html">PMD Code Size Rule Set
      *      Documentation</a>
      */
     public static final String TOO_MANY_METHODS                                  = "PMD.TooManyMethods";
@@ -934,7 +934,7 @@ public final class PMDWarnings {
      * Denotes whether comments are required (or unwanted) for specific language elements.
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
     public static final String COMMENT_REQUIRED                                  = "PMD.CommentRequired";
@@ -943,7 +943,7 @@ public final class PMDWarnings {
      * Determines whether the dimensions of non-header comments found are within the specified limits.
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
     public static final String COMMENT_SIZE                                      = "PMD.CommentSize";
@@ -952,7 +952,7 @@ public final class PMDWarnings {
      * A rule for the politically correct... we don't want to offend anyone.
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/comments.html">PMD Comments Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/comments.html">PMD Comments Rule Set
      *      Documentation</a>
      */
     public static final String COMMENT_CONTENT                                   = "PMD.CommentContent";
@@ -969,7 +969,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String UNNECESSARY_CONSTRUCTOR                           = "PMD.UnnecessaryConstructor";
@@ -991,7 +991,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.02
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String NULL_ASSIGNMENT                                   = "PMD.NullAssignment";
@@ -1011,7 +1011,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String ONLY_ONE_RETURN                                   = "PMD.OnlyOneReturn";
@@ -1029,7 +1029,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.03
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String ASSIGNMENT_IN_OPERAND                             = "PMD.AssignmentInOperand";
@@ -1046,7 +1046,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.04
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AT_LEAST_ONE_CONSTRUCTOR                          = "PMD.AtLeastOneConstructor";
@@ -1060,7 +1060,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String DONT_IMPORT_SUN                                   = "PMD.DontImportSun";
@@ -1080,7 +1080,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String SUSPICIOUS_OCTAL_ESCAPE                           = "PMD.SuspiciousOctalEscape";
@@ -1105,7 +1105,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String CALL_SUPER_IN_CONSTRUCTOR                         = "PMD.CallSuperInConstructor";
@@ -1122,7 +1122,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String UNNECESSARY_PARENTHESES                           = "PMD.UnnecessaryParentheses";
@@ -1131,7 +1131,7 @@ public final class PMDWarnings {
      * Use explicit scoping instead of the default package private level.
      * 
      * @since PMD 3.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String DEFAULT_PACKAGE                                   = "PMD.DefaultPackage";
@@ -1147,7 +1147,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String BOOLEAN_INVERSION                                 = "PMD.BooleanInversion";
@@ -1169,7 +1169,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.9
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String DATAFLOW_ANOMALY_ANALYSIS                         = "PMD.DataflowAnomalyAnalysis";
@@ -1186,7 +1186,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_FINAL_LOCAL_VARIABLE                        = "PMD.AvoidFinalLocalVariable";
@@ -1209,7 +1209,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_USING_SHORT_TYPE                            = "PMD.AvoidUsingShortType";
@@ -1227,7 +1227,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_USING_VOLATILE                              = "PMD.AvoidUsingVolatile";
@@ -1254,7 +1254,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_USING_NATIVE_CODE                           = "PMD.AvoidUsingNativeCode";
@@ -1292,7 +1292,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_ACCESSIBILITY_ALTERATION                    = "PMD.AvoidAccessibilityAlteration";
@@ -1323,7 +1323,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String DO_NOT_CALL_GARBAGE_COLLECTION_EXPLICITLY         = "PMD.DoNotCallGarbageCollectionExplicitly";
@@ -1339,7 +1339,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String ONE_DECLARATION_PER_LINE                          = "PMD.OneDeclarationPerLine";
@@ -1370,7 +1370,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_PREFIXING_METHOD_PARAMETERS                 = "PMD.AvoidPrefixingMethodParameters";
@@ -1397,7 +1397,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.2.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_LITERALS_IN_IF_CONDITION                    = "PMD.AvoidLiteralsInIfCondition";
@@ -1427,7 +1427,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.2.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String USE_OBJECT_FOR_CLEARER_API                        = "PMD.UseObjectForClearerAPI";
@@ -1449,7 +1449,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.2.6
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html">PMD Controversial Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/controversial.html">PMD Controversial Rule Set
      *      Documentation</a>
      */
     public static final String USE_CONCURRENT_HASH_MAP                           = "PMD.UseConcurrentHashMap";
@@ -1478,7 +1478,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.04
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
     public static final String COUPLING_BETWEEN_OBJECTS                          = "PMD.CouplingBetweenObjects";
@@ -1494,7 +1494,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.04
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
     public static final String EXCESSIVE_IMPORTS                                 = "PMD.ExcessiveImports";
@@ -1517,7 +1517,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.7
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
     public static final String LOOSE_COUPLING                                    = "PMD.LooseCoupling";
@@ -1537,7 +1537,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
     public static final String LOOSE_PACKAGE_COUPLING                            = "PMD.LoosePackageCoupling";
@@ -1571,29 +1571,30 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
      *      Documentation</a>
      */
     public static final String LAW_OF_DEMETER                                    = "PMD.LawOfDemeter";
 
-    // TODO: Add design rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/design.html
-    // TODO: Add empty code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html
-    // TODO: Add finanlizer rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html
-    // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html
-    // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html
-    // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html
-    // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/junit.html
-    // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-jakarta-commons.html
-    // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-java.html
-    // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/migrating.html
-    // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/naming.html
-    // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/optimizations.html
-    // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/strictexception.html
-    // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/strings.html
-    // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/sunsecure.html
-    // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/typeresolution.html
-    // TODO: Add unnecessary rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/unnecessary.html
-    // TODO: Add unused code rule set: http://pmd.sourceforge.net/pmd-5.0.1/rules/java/unusedcode.html
+    // TODO: Add design rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/design.html
+
+    // TODO: Add empty code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html
+    // TODO: Add finanlizer rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html
+    // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html
+    // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html
+    // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html
+    // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
+    // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html
+    // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html
+    // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html
+    // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html
+    // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
+    // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
+    // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
+    // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html
+    // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html
+    // TODO: Add unnecessary rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html
+    // TODO: Add unused code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html
 
     private PMDWarnings() {
         // Constants class
