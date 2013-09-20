@@ -1489,27 +1489,8 @@ public final class PMDWarnings {
      * 
      * <pre>
      * import blah.blah.Baz;
-     * import blah.blah.Bif;
-     * 
      * // 18 others from the same package elided
-     * public class Foo {
-     *     public void doWork() {
-     *     }
-     * }
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
+     * import blah.blah.Bif;
      * </pre>
      * 
      * @since PMD 1.04
