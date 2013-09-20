@@ -1578,7 +1578,226 @@ public final class PMDWarnings {
 
     // TODO: Add design rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/design.html
 
-    // TODO: Add empty code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html
+    /**
+     * Empty Catch Block finds instances where an exception is caught, but nothing is done. In most circumstances, this
+     * swallows an exception which should either be acted on or reported. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void doSomething() {
+     *     try {
+     *         FileInputStream fis = new FileInputStream(&quot;/tmp/bugger&quot;);
+     *     } catch (IOException ioe) {
+     *         // not good
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_CATCH_BLOCK                                 = "PMD.EmptyCatchBlock";
+
+    /**
+     * Empty If Statement finds instances where a condition is checked but nothing is done about it. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar(int x) {
+     *         if (x == 0) {
+     *             // empty!
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_IF_STATEMENT                                = "PMD.EmptyIfStmt";
+
+    /**
+     * Empty While Statement finds all instances where a while statement does nothing. If it is a timing loop, then you
+     * should use Thread.sleep() for it; if it is a while loop that does a lot in the exit expression, rewrite it to
+     * make it clearer. <h2>Example</h2>
+     * 
+     * <pre>
+     * void bar(int a, int b) {
+     *     while (a == b) {
+     *         // empty!
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_WHILE_STATEMENT                             = "PMD.EmptyWhileStmt";
+
+    /**
+     * Avoid empty try blocks - what's the point? <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() {
+     *         try {
+     *         } catch (Exception e) {
+     *             e.printStackTrace();
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_TRY_BLOCK                                   = "PMD.EmptyTryBlock";
+
+    /**
+     * Empty finally blocks serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() {
+     *         try {
+     *             int x = 2;
+     *         } finally {
+     *             // empty!
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_FINALLY_BLOCK                               = "PMD.EmptyFinallyBlock";
+
+    /**
+     * Empty switch statements serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     int x = 2;
+     *     switch (x) {
+     *     // once there was code here
+     *     // but it's been commented out or something
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_SWITCH_STATEMENTS                           = "PMD.EmptySwitchStatements";
+
+    /**
+     * Empty synchronized blocks serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() {
+     *         synchronized (this) {
+     *             // empty!
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_SYNCHRONIZED_BLOCK                          = "PMD.EmptySynchronizedBlock";
+
+    /**
+     * An empty statement (or a semicolon by itself) that is not used as the sole body of a 'for' or 'while' loop is
+     * probably a bug. It could also be a double semicolon, which has no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void doit() {
+     *     // this is probably not what you meant to do
+     *     ;
+     *     // the extra semicolon here this is not necessary
+     *     System.out.println(&quot;look at the extra semicolon&quot;);
+     *     ;
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_STATEMENT_NOT_IN_LOOP                       = "PMD.EmptyStatementNotInLoop";
+
+    /**
+     * Empty initializers serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * 
+     *     static {
+     *     } // Why ?
+     * 
+     *     {
+     *     } // Again, why ?
+     * 
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_INITIALIZER                                 = "PMD.EmptyInitializer";
+
+    /**
+     * Empty block statements serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * 
+     *     private int _bar;
+     * 
+     *     public void setBar(int bar) {
+     *         {
+     *             _bar = bar;
+     *         } // Why not?
+     *         {
+     *         } // But remove this.
+     *     }
+     * 
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_STATEMENT_BLOCK                             = "PMD.EmptyStatementBlock";
+
+    /**
+     * An empty static initializer serve no purpose and should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     static {
+     *         // empty
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     *      Documentation</a>
+     */
+    public static final String EMPTY_STATIC_INITIALIZER                          = "PMD.EmptyStaticInitializer";
+
     // TODO: Add finanlizer rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html
     // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html
     // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html
