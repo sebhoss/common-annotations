@@ -2154,7 +2154,54 @@ public final class PMDWarnings {
      */
     public static final String DO_NOT_USE_THREADS                                = "PMD.DoNotUseThreads";
 
-    // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html
+    /**
+     * If a class is a bean, or is referenced by a bean directly or indirectly it needs to be serializable. Member
+     * variables need to be marked as transient, static, or have accessor methods in the class. Marking variables as
+     * transient is the safest and easiest modification. Accessor methods should follow the Java naming conventions,
+     * i.e. for a variable named foo, getFoo() and setFoo() accessor methods should be provided. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Serialized {
+     *     private transient int someFoo; // good, it's transient
+     *     private static int    otherFoo; // also OK
+     *     private int           moreFoo; // OK, has proper accessors, see below
+     *     private int           badFoo;  // bad, should be
+     *                                     // marked transient
+     * 
+     *     private void setMoreFoo(
+     *             int moreFoo) {
+     *         this.moreFoo = moreFoo;
+     *     }
+     * 
+     *     private int getMoreFoo() {
+     *         return this.moreFoo;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html">PMD JavaBeans Rule Set
+     *      Documentation</a>
+     */
+    public static final String BEAN_MEMBERS_SHOULD_SERIALIZE                     = "PMD.BeanMembersShouldSerialize";
+
+    /**
+     * Serializable classes should provide a serialVersionUID field. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo implements java.io.Serializable {
+     *     String name;
+     *     // Define serialization id to avoid serialization related bugs
+     *     // i.e., public static final long serialVersionUID = 4328743;
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html">PMD JavaBeans Rule Set
+     *      Documentation</a>
+     */
+    public static final String MISSING_SERIAL_VERSION_UID                        = "PMD.MissingSerialVersionUID";
+
     // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
     // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html
     // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html
