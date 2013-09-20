@@ -1593,7 +1593,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_CATCH_BLOCK                                 = "PMD.EmptyCatchBlock";
@@ -1612,7 +1612,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_IF_STATEMENT                                = "PMD.EmptyIfStmt";
@@ -1631,7 +1631,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_WHILE_STATEMENT                             = "PMD.EmptyWhileStmt";
@@ -1651,7 +1651,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_TRY_BLOCK                                   = "PMD.EmptyTryBlock";
@@ -1672,7 +1672,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_FINALLY_BLOCK                               = "PMD.EmptyFinallyBlock";
@@ -1691,7 +1691,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_SWITCH_STATEMENTS                           = "PMD.EmptySwitchStatements";
@@ -1710,7 +1710,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.3
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_SYNCHRONIZED_BLOCK                          = "PMD.EmptySynchronizedBlock";
@@ -1730,7 +1730,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATEMENT_NOT_IN_LOOP                       = "PMD.EmptyStatementNotInLoop";
@@ -1751,7 +1751,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_INITIALIZER                                 = "PMD.EmptyInitializer";
@@ -1776,7 +1776,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATEMENT_BLOCK                             = "PMD.EmptyStatementBlock";
@@ -1793,7 +1793,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATIC_INITIALIZER                          = "PMD.EmptyStaticInitializer";
@@ -1809,7 +1809,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_FINANLIZER                                  = "PMD.EmptyFinalizer";
@@ -1824,7 +1824,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_ONLY_CALLS_SUPER_FINALIZE                = "PMD.FinalizeOnlyCallsSuperFinalize";
@@ -1842,7 +1842,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_OVERLOADED                               = "PMD.FinalizeOverloaded";
@@ -1858,7 +1858,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_DOES_NOT_CALL_SUPER_FINALIZE             = "PMD.FinalizeDoesNotCallSuperFinalize";
@@ -1874,7 +1874,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_SHOULD_BE_PROTECTED                      = "PMD.FinalizeShouldBeProtected";
@@ -1891,12 +1891,106 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/coupling.html">PMD Coupling Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_CALLING_FINALIZE                            = "PMD.AvoidCallingFinalize";
 
-    // TODO: Add import statements rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html
+    /**
+     * Duplicate or overlapping import statements should be avoided. <h2>Example</h2>
+     * 
+     * <pre>
+     * import java.lang.String;
+     * import java.lang.*;
+     * </pre>
+     * 
+     * @since PMD 0.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String DUPLICATE_IMPORTS                                 = "PMD.DuplicateImports";
+
+    /**
+     * Avoid importing anything from the package 'java.lang'. These classes are automatically imported (JLS 7.5.3). <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * import java.lang.String; // this is unnecessary
+     * import java.lang.*; // this is bad
+     * </pre>
+     * 
+     * @since PMD 0.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String DONT_IMPORT_JAVA_LANG                             = "PMD.DontImportJavaLang";
+
+    /**
+     * Avoid the use of unused import statements to prevent unwanted dependencies. <h2>Example</h2>
+     * 
+     * <pre>
+     * // this is bad, if the class doesn't use java.io.File
+     * import java.io.File;
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_IMPORTS                                    = "PMD.UnusedImports";
+
+    /**
+     * There is no need to import a type that lives in the same package. <h2>Example</h2>
+     * 
+     * <pre>
+     * package foo;
+     * 
+     * import foo.Buz; // no need for this
+     * import foo.*; // or this
+     * </pre>
+     * 
+     * @since PMD 1.02
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String IMPORT_FROM_SAME_PACKAGE                          = "PMD.ImportFromSamePackage";
+
+    /**
+     * If you overuse the static import feature, it can make your program unreadable and unmaintainable, polluting its
+     * namespace with all the static members you import. Readers of your code (including you, a few months after you
+     * wrote it) will not know which class a static member comes from (Sun 1.5 Language Guide). <h2>Example</h2>
+     * 
+     * <pre>
+     * import static Lennon;
+     * import static Ringo;
+     * import static George;
+     * import static Paul;
+     * import static Yoko; // Too much !
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String TOO_MANY_STATIC_IMPORTS                           = "PMD.TooManyStaticImports";
+
+    /**
+     * Import statements allow the use of non-fully qualified names. The use of a fully qualified name which is covered
+     * by an import statement is redundant. Consider using the non-fully qualified name. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private java.util.List list1; // Unnecessary FQN
+     *     private List           list2; // More appropriate given import of 'java.util.List'
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_FULLY_QUALIFIED_NAME                  = "PMD.UnnecessaryFullyQualifiedName";
+
     // TODO: Add J2EE rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html
     // TODO: Add JavaBeans rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html
     // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
