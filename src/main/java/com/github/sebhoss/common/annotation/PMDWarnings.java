@@ -2210,7 +2210,48 @@ public final class PMDWarnings {
     // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
     // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
-    // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html
+
+    /**
+     * Exposing internal arrays to the caller violates object encapsulation since elements can be removed or replaced
+     * outside of the object that owns it. It is safer to return a copy of the array. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SecureSystem {
+     *     UserData[] ud;
+     * 
+     *     public UserData[] getUserData() {
+     *         // Don't return directly the internal array, return a copy
+     *         return ud;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html">PMD Security Code Guidelines Rule
+     *      Set Documentation</a>
+     */
+    public static final String METHOD_RETURNS_INTERNAL_ARRAY                     = "PMD.MethodReturnsInternalArray";
+
+    /**
+     * Constructors and methods receiving arrays should clone objects and store the copy. This prevents future changes
+     * from the user from affecting the original array. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private String[] x;
+     * 
+     *     public void foo(String[] param) {
+     *         // Don't do this, make a copy of the array at least
+     *         this.x = param;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html">PMD Security Code Guidelines Rule
+     *      Set Documentation</a>
+     */
+    public static final String ARRAY_IS_STORED_DIRECTLY                          = "PMD.ArrayIsStoredDirectly";
 
     /**
      * It is unclear which exceptions that can be thrown from the methods. It might be difficult to document and
