@@ -2213,7 +2213,109 @@ public final class PMDWarnings {
     // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html
     // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html
     // TODO: Add unnecessary rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html
-    // TODO: Add unused code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html
+
+    /**
+     * Detects when a private field is declared and/or assigned a value, but not used. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Something {
+     *     private static int FOO = 2; // Unused
+     *     private int        i   = 5; // Unused
+     *     private int        j   = 6;
+     * 
+     *     public int addOne() {
+     *         return j++;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html">PMD Unused Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_PRIVATE_FIELD                              = "PMD.UnusedPrivateField";
+
+    /**
+     * Detects when a local variable is declared and/or assigned, but not used. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void doSomething() {
+     *         int i = 5; // Unused
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html">PMD Unused Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_LOCAL_VARIABLE                             = "PMD.UnusedLocalVariable";
+
+    /**
+     * Unused Private Method detects when a private method is declared but is unused. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Something {
+     *     private void foo() {
+     *     } // unused
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.7
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html">PMD Unused Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_PRIVATE_METHOD                             = "PMD.UnusedPrivateMethod";
+
+    /**
+     * Avoid passing parameters to methods or constructors without actually referencing them in the method body. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private void bar(String howdy) {
+     *         // howdy is not used
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html">PMD Unused Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_FORMAL_PARAMETER                           = "PMD.UnusedFormalParameter";
+
+    /**
+     * Fields in interfaces are automatically public static final, and methods are public abstract. Classes or
+     * interfaces nested in an interface are automatically public and static (all nested interfaces are automatically
+     * static). For historical reasons, modifiers which are implied by the context are accepted by the compiler, but are
+     * superfluous. <h2>Example</h2>
+     * 
+     * <pre>
+     * public interface Foo {
+     *     public abstract void bar(); // both abstract and public are ignored by the compiler
+     * 
+     *     public static final int X = 0; // public, static, and final all ignored
+     * 
+     *     public static class Bar {
+     *     } // public, static ignored
+     * 
+     *     public static interface Baz {
+     *     } // ditto
+     * }
+     * 
+     * public class Bar {
+     *     public static interface Baz {
+     *     } // static ignored
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.02
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unusedcode.html">PMD Unused Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_MODIFIER                                   = "PMD.UnusedModifier";
 
     private PMDWarnings() {
         // Constants class
