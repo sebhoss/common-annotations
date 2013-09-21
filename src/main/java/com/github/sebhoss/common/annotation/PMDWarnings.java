@@ -2284,7 +2284,85 @@ public final class PMDWarnings {
      */
     public static final String GUARD_DEBUG_LOGGING                               = "PMD.GuardDebugLogging";
 
-    // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html
+    /**
+     * Normally only one logger is used in each class. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     Logger log  = Logger.getLogger(Foo.class.getName());
+     *     // It is very rare to see two loggers on a class, normally
+     *     // log information is multiplexed by levels
+     *     Logger log2 = Logger.getLogger(Foo.class.getName());
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html">PMD Java Logging Rule Set
+     *      Documentation</a>
+     */
+    public static final String MORE_THAN_ONE_LOGGER                              = "PMD.MoreThanOneLogger";
+
+    /**
+     * In most cases, the Logger reference can be declared as static and final. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     Logger              log = Logger.getLogger(Foo.class.getName()); // not recommended
+     * 
+     *     static final Logger log = Logger.getLogger(Foo.class.getName()); // preferred approach
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html">PMD Java Logging Rule Set
+     *      Documentation</a>
+     */
+    public static final String LOGGER_IS_NOT_STATIC_FINAL                        = "PMD.LoggerIsNotStaticFinal";
+
+    /**
+     * References to System.(out|err).print are usually intended for debugging purposes and can remain in the codebase
+     * even in production code. By using a logger one can enable/disable this behaviour at will (and by priority) and
+     * avoid clogging the Standard out log. <h2>Example</h2>
+     * 
+     * <pre>
+     * class Foo {
+     *     Logger log = Logger.getLogger(Foo.class.getName());
+     * 
+     *     public void testA() {
+     *         System.out.println(&quot;Entering test&quot;);
+     *         // Better use this
+     *         log.fine(&quot;Entering test&quot;);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html">PMD Java Logging Rule Set
+     *      Documentation</a>
+     */
+    public static final String SYSTEM_PRINTLN                                    = "PMD.SystemPrintln";
+
+    /**
+     * Avoid printStackTrace(); use a logger call instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * class Foo {
+     *     void bar() {
+     *         try {
+     *             // do something
+     *         } catch (Exception e) {
+     *             e.printStackTrace();
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html">PMD Java Logging Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_PRINT_STACK_TRACE                           = "PMD.AvoidPrintStackTrace";
+
     // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html
     // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html
     // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
