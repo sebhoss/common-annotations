@@ -2884,7 +2884,351 @@ public final class PMDWarnings {
      */
     public static final String JUNIT_USE_EXPECTED                                = "PMD.JUnitUseExpected";
 
-    // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html
+    /**
+     * Fields, local variables, or parameter names that are very short are not helpful to the reader. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Something {
+     *     private int q = 15; // field - too short
+     * 
+     *     public static void main(String as[]) { // formal arg - too short
+     *         int r = 20 + q; // local var - too short
+     *         for (int i = 0; i &lt; 10; i++) { // not a violation (inside 'for' loop)
+     *             r += q;
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SHORT_VARIABLE                                    = "PMD.ShortVariable";
+
+    /**
+     * Fields, formal arguments, or local variable names that are too long can make the code difficult to follow. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Something {
+     *     int reallyLongIntName = -3;             // VIOLATION - Field
+     *     public static void main( String argumentsList[] ) { // VIOLATION - Formal
+     *         int otherReallyLongName = -5;       // VIOLATION - Local
+     *         for (int interestingIntIndex = 0;   // VIOLATION - For
+     *              interestingIntIndex < 10;
+     *              interestingIntIndex ++ ) {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String LONG_VARIABLE                                     = "PMD.LongVariable";
+
+    /**
+     * Method names that are very short are not helpful to the reader. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class ShortMethod {
+     *     public void a(int i) { // Violation
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SHORT_METHOD_NAME                                 = "PMD.ShortMethodName";
+
+    /**
+     * A variable naming conventions rule - customize this to your liking. Currently, it checks for final variables that
+     * should be fully capitalized and non-final variables that should not include underscores. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public static final int MY_NUM = 0;
+     *     public String           myTest = &quot;&quot;;
+     *     DataModule              dmTest = new DataModule();
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String VARIABLE_NAMING_CONVENTIONS                       = "PMD.VariableNamingConventions";
+
+    /**
+     * Method names should always begin with a lower case character, and should not contain underscores. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void fooStuff() {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String METHOD_NAMING_CONVENTIONS                         = "PMD.MethodNamingConventions";
+
+    /**
+     * Class names should always begin with an upper case character. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String CLASS_NAMING_CONVENTIONS                          = "PMD.ClassNamingConventions";
+
+    /**
+     * Abstract classes should be named 'AbstractXXX'. <h2>Example</h2>
+     * 
+     * <pre>
+     * public abstract class Foo { // should be AbstractFoo
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String ABSTRACT_NAMING                                   = "PMD.AbstractNaming";
+
+    /**
+     * Avoid using dollar signs in variable/method/class/interface names. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Fo$o { // not a recommended name
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String AVOID_DOLLAR_SIGNS                                = "PMD.AvoidDollarSigns";
+
+    /**
+     * Non-constructor methods should not have the same name as the enclosing class. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyClass {
+     * 
+     *     public MyClass() {
+     *     } // this is OK because it is a constructor
+     * 
+     *     public void MyClass() {
+     *     } // this is bad because it is a method
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String METHOD_WITH_SAME_NAME_AS_ENCLOSING_CLASS          = "PMD.MethodWithSameNameAsEnclosingClass";
+
+    /**
+     * The method name and return type are suspiciously close to hashCode(), which may denote an intention to override
+     * the hashCode() method. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public int hashcode() { // oops, this probably was supposed to be 'hashCode'
+     * 
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SUSPICIOUS_HASHCODE_METHOD_NAME                   = "PMD.SuspiciousHashcodeMethodName";
+
+    /**
+     * Field names using all uppercase characters - Sun's Java naming conventions indicating constants - should be
+     * declared as final. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     // this is bad, since someone could accidentally
+     *     // do PI = 2.71828; which is actually e
+     *     // final double PI = 3.16; is ok
+     *     double PI = 3.16;
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SUSPICIOUS_CONSTANT_FIELD_NAME                    = "PMD.SuspiciousConstantFieldName";
+
+    /**
+     * The method name and parameter number are suspiciously close to equals(Object), which can denote an intention to
+     * override the equals(Object) method. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public int equals(Object o) {
+     *         // oops, this probably was supposed to be boolean equals
+     *     }
+     * 
+     *     public boolean equals(String s) {
+     *         // oops, this probably was supposed to be equals(Object)
+     *     }
+     * 
+     *     public boolean equals(Object o1, Object o2) {
+     *         // oops, this probably was supposed to be equals(Object)
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SUSPICIOUS_EQUALS_METHOD_NAME                     = "PMD.SuspiciousEqualsMethodName";
+
+    /**
+     * It is somewhat confusing to have a field name matching the declaring class name. This probably means that type
+     * and/or field names should be chosen more carefully. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends Bar {
+     *     int foo; // There is probably a better name that can be used
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String AVOID_FIELD_NAME_MATCHING_TYPE_NAME               = "PMD.AvoidFieldNameMatchingTypeName";
+
+    /**
+     * It can be confusing to have a field name with the same name as a method. While this is permitted, having
+     * information (field) and actions (method) is not clear naming. Developers versed in Smalltalk often prefer this
+     * approach as the methods denote accessor methods. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     Object bar;
+     * 
+     *     // bar is data or an action or both?
+     *     void bar() {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String AVOID_FIELD_NAME_MATCHING_METHOD_NAME             = "PMD.AvoidFieldNameMatchingMethodName";
+
+    /**
+     * Detects when a class or interface does not have a package definition. <h2>Example</h2>
+     * 
+     * <pre>
+     * // no package declaration
+     * public class ClassInDefaultPackage {
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String NO_PACKAGE                                        = "PMD.NoPackage";
+
+    /**
+     * Detects when a package definition contains uppercase characters. <h2>Example</h2>
+     * 
+     * <pre>
+     * package com.MyCompany; // should be lowercase name
+     * </pre>
+     * 
+     * @since PMD 3.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String PACKAGE_CASE                                      = "PMD.PackageCase";
+
+    /**
+     * Detects when a non-field has a name starting with 'm_'. This usually denotes a field and could be confusing. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private int m_foo; // OK
+     * 
+     *     public void bar(String m_baz) { // Bad
+     *         int m_boz = 42; // Bad
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String MISLEADING_VARIABLE_NAME                          = "PMD.MisleadingVariableName";
+
+    /**
+     * Methods that return boolean results should be named as predicate statements to denote this. I.e, 'isReady()',
+     * 'hasValues()', 'canCommit()', 'willFail()', etc. Avoid the use of the 'get' prefix for these methods. <h2>Example
+     * </h2>
+     * 
+     * <pre>
+     * public boolean getFoo(); // bad
+     * 
+     * public boolean isFoo(); // ok
+     * 
+     * public boolean getFoo(boolean bar); // ok, unless checkParameterizedMethods=true
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String BOOLEAN_GET_METHOD_NAME                           = "PMD.BooleanGetMethodName";
+
+    /**
+     * Classnames with fewer than five characters are not recommended. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String SHORT_CLASS_NAME                                  = "PMD.ShortClassName";
+
+    /**
+     * Names for references to generic values should be limited to a single uppercase letter. <h2>Example</h2>
+     * 
+     * <pre>
+     * public interface GenericDao&lt;E extends BaseModel, K extends Serializable&gt; extends BaseDao {
+     *     // This is ok...
+     * }
+     * 
+     * public interface GenericDao&lt;E extends BaseModel, K extends Serializable&gt; {
+     *     // Also this
+     * }
+     * 
+     * public interface GenericDao&lt;e extends BaseModel, K extends Serializable&gt; {
+     *     // 'e' should be an 'E'
+     * }
+     * 
+     * public interface GenericDao&lt;EF extends BaseModel, K extends Serializable&gt; {
+     *     // 'EF' is not ok.
+     * }
+     * 
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html">PMD Naming Rule Set Documentation</a>
+     */
+    public static final String GENERICS_NAMING                                   = "PMD.GenericsNaming";
+
     // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
     // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
