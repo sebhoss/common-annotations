@@ -2211,7 +2211,22 @@ public final class PMDWarnings {
     // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
     // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html
-    // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html
+
+    /**
+     * It is unclear which exceptions that can be thrown from the methods. It might be difficult to document and
+     * understand the vague interfaces. Use either a class derived from RuntimeException or a checked exception. JUnit
+     * classes are excluded. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void methodThrowingException() throws Exception {
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html">PMD Type Resolution Rule Set
+     *      Documentation</a>
+     */
+    public static final String SIGNATURE_DECLARE_THROWS_EXCEPTION                = "PMD.SignatureDeclareThrowsException";
 
     /**
      * Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the
