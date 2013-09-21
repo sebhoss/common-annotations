@@ -2203,7 +2203,87 @@ public final class PMDWarnings {
     public static final String MISSING_SERIAL_VERSION_UID                        = "PMD.MissingSerialVersionUID";
 
     // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
-    // TODO: Add Jakarta Commons rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html
+
+    /**
+     * To make sure the full stacktrace is printed out, use the logging statement with two arguments: a String and a
+     * Throwable. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Main {
+     *     private static final Log _LOG = LogFactory.getLog(Main.class);
+     * 
+     *     void bar() {
+     *         try {
+     *         } catch (Exception e) {
+     *             _LOG.error(e); // Wrong!
+     *         } catch (OtherException oe) {
+     *             _LOG.error(oe.getMessage(), oe); // Correct
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html">PMD Jakarta Commons
+     *      Logging Rule Set Documentation</a>
+     */
+    public static final String USE_CORRECT_EXCEPTION_LOGGING                     = "PMD.UseCorrectExceptionLogging";
+
+    /**
+     * A logger should normally be defined private static final and be associated with the correct class. Private final
+     * Log log; is also allowed for rare cases where loggers need to be passed around, with the restriction that the
+     * logger needs to be passed into the constructor. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * 
+     *     private static final Log LOG = LogFactory.getLog(Foo.class);      // proper way
+     * 
+     *     protected Log            LOG = LogFactory.getLog(Testclass.class); // wrong approach
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html">PMD Jakarta Commons
+     *      Logging Rule Set Documentation</a>
+     */
+    public static final String PROPER_LOGGER                                     = "PMD.ProperLogger";
+
+    /**
+     * When log messages are composed by concatenating strings, the whole section should be guarded by a
+     * isDebugEnabled() check to avoid performance and memory issues. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Test {
+     *     private static final Log __log = LogFactory.getLog(Test.class);
+     * 
+     *     public void test() {
+     *         // okay:
+     *         __log.debug(&quot;log something&quot;);
+     * 
+     *         // okay:
+     *         __log.debug(&quot;log something with exception&quot;, e);
+     * 
+     *         // bad:
+     *         __log.debug(&quot;log something&quot; + &quot; and &quot; + &quot;concat strings&quot;);
+     * 
+     *         // bad:
+     *         __log.debug(&quot;log something&quot; + &quot; and &quot; + &quot;concat strings&quot;, e);
+     * 
+     *         // good:
+     *         if (__log.isDebugEnabled()) {
+     *             __log.debug(&quot;bla&quot; + &quot;&quot;, e);
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-jakarta-commons.html">PMD Jakarta Commons
+     *      Logging Rule Set Documentation</a>
+     */
+    public static final String GUARD_DEBUG_LOGGING                               = "PMD.GuardDebugLogging";
+
     // TODO: Add Java logging rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/logging-java.html
     // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html
     // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html
