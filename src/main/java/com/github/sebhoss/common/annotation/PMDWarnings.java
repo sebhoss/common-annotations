@@ -1593,7 +1593,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_CATCH_BLOCK                                 = "PMD.EmptyCatchBlock";
@@ -1612,7 +1612,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_IF_STATEMENT                                = "PMD.EmptyIfStmt";
@@ -1631,7 +1631,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.2
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_WHILE_STATEMENT                             = "PMD.EmptyWhileStmt";
@@ -1651,7 +1651,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_TRY_BLOCK                                   = "PMD.EmptyTryBlock";
@@ -1672,7 +1672,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.4
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_FINALLY_BLOCK                               = "PMD.EmptyFinallyBlock";
@@ -1691,7 +1691,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_SWITCH_STATEMENTS                           = "PMD.EmptySwitchStatements";
@@ -1710,7 +1710,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.3
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_SYNCHRONIZED_BLOCK                          = "PMD.EmptySynchronizedBlock";
@@ -1730,7 +1730,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATEMENT_NOT_IN_LOOP                       = "PMD.EmptyStatementNotInLoop";
@@ -1751,7 +1751,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_INITIALIZER                                 = "PMD.EmptyInitializer";
@@ -1776,7 +1776,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATEMENT_BLOCK                             = "PMD.EmptyStatementBlock";
@@ -1793,7 +1793,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/empty.html">PMD Empty Code Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/empty.html">PMD Empty Code Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_STATIC_INITIALIZER                          = "PMD.EmptyStaticInitializer";
@@ -1809,7 +1809,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String EMPTY_FINANLIZER                                  = "PMD.EmptyFinalizer";
@@ -1824,7 +1824,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_ONLY_CALLS_SUPER_FINALIZE                = "PMD.FinalizeOnlyCallsSuperFinalize";
@@ -1842,7 +1842,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_OVERLOADED                               = "PMD.FinalizeOverloaded";
@@ -1858,7 +1858,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_DOES_NOT_CALL_SUPER_FINALIZE             = "PMD.FinalizeDoesNotCallSuperFinalize";
@@ -1874,7 +1874,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String FINALIZE_SHOULD_BE_PROTECTED                      = "PMD.FinalizeShouldBeProtected";
@@ -1891,7 +1891,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/finalizers.html">PMD Finalizers Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/finalizers.html">PMD Finalizers Rule Set
      *      Documentation</a>
      */
     public static final String AVOID_CALLING_FINALIZE                            = "PMD.AvoidCallingFinalize";
@@ -1905,7 +1905,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String DUPLICATE_IMPORTS                                 = "PMD.DuplicateImports";
@@ -1920,7 +1920,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 0.5
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String DONT_IMPORT_JAVA_LANG                             = "PMD.DontImportJavaLang";
@@ -1934,7 +1934,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String UNUSED_IMPORTS                                    = "PMD.UnusedImports";
@@ -1950,7 +1950,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.02
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String IMPORT_FROM_SAME_PACKAGE                          = "PMD.ImportFromSamePackage";
@@ -1969,7 +1969,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String TOO_MANY_STATIC_IMPORTS                           = "PMD.TooManyStaticImports";
@@ -1986,7 +1986,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 5.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/imports.html">PMD Import Statements Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/imports.html">PMD Import Statements Rule Set
      *      Documentation</a>
      */
     public static final String UNNECESSARY_FULLY_QUALIFIED_NAME                  = "PMD.UnnecessaryFullyQualifiedName";
@@ -2002,7 +2002,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.7
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String USE_PROPER_CLASS_LOADER                           = "PMD.UseProperClassLoader";
 
@@ -2018,7 +2018,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String MDB_AND_SESSION_BEAN_NAMING_CONVENTION            = "PMD.MDBAndSessionBeanNamingConvention";
 
@@ -2034,7 +2034,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String REMOTE_SESSION_INTERFACE_NAMING_CONVENTION        = "PMD.RemoteSessionInterfaceNamingConvention";
 
@@ -2050,7 +2050,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String LOCAL_INTERFACE_SESSION_NAMING_CONVENTION         = "PMD.LocalInterfaceSessionNamingConvention";
 
@@ -2066,7 +2066,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String LOCAL_HOME_NAMING_CONVENTION                      = "PMD.LocalHomeNamingConvention";
 
@@ -2088,7 +2088,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String REMOTE_INTERFACE_NAMING_CONVENTION                = "PMD.RemoteInterfaceNamingConvention";
 
@@ -2107,7 +2107,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String DO_NOT_CALL_SYSTEM_EXIT                           = "PMD.DoNotCallSystemExit";
 
@@ -2126,7 +2126,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String STATIC_EJB_FIELD_SHOULD_BE_FINAL                  = "PMD.StaticEJBFieldShouldBeFinal";
 
@@ -2150,7 +2150,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 4.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/j2ee.html">PMD J2EE Rule Set Documentation</a>
      */
     public static final String DO_NOT_USE_THREADS                                = "PMD.DoNotUseThreads";
 
@@ -2180,7 +2180,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 1.1
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html">PMD JavaBeans Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html">PMD JavaBeans Rule Set
      *      Documentation</a>
      */
     public static final String BEAN_MEMBERS_SHOULD_SERIALIZE                     = "PMD.BeanMembersShouldSerialize";
@@ -2197,7 +2197,7 @@ public final class PMDWarnings {
      * </pre>
      * 
      * @since PMD 3.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.1/rules/java/javabeans.html">PMD JavaBeans Rule Set
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/javabeans.html">PMD JavaBeans Rule Set
      *      Documentation</a>
      */
     public static final String MISSING_SERIAL_VERSION_UID                        = "PMD.MissingSerialVersionUID";
