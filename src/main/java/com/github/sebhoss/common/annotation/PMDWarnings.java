@@ -2212,7 +2212,185 @@ public final class PMDWarnings {
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
     // TODO: Add security code rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/sunsecure.html
     // TODO: Add type resolution rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html
-    // TODO: Add unnecessary rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html
+
+    /**
+     * Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the
+     * wrapper classes instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * public String convert(int x) {
+     *     String foo = new Integer(x).toString(); // this wastes an object
+     * 
+     *     return Integer.toString(x); // preferred approach
+     * }
+     * </pre>
+     * 
+     * @since PMD 0.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_CONVERSION_TEMPORARY                  = "PMD.UnnecessaryConversionTemporary";
+
+    /**
+     * Avoid the use of unnecessary return statements. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() {
+     *         int x = 42;
+     *         return;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_RETURN                                = "PMD.UnnecessaryReturn";
+
+    /**
+     * When a class has the final modifier, all the methods are automatically final and do not need to be tagged as
+     * such. <h2>Example</h2>
+     * 
+     * <pre>
+     * public final class Foo {
+     *     // This final modifier is not necessary, since the class is final
+     *     // and thus, all methods are final
+     *     private final void foo() {
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_FINAL_MODIFIER                        = "PMD.UnnecessaryFinalModifier";
+
+    /**
+     * The overriding method merely calls the same method defined in a superclass. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void foo(String bar) {
+     *     super.foo(bar); // why bother overriding?
+     * }
+     * 
+     * public String foo() {
+     *     return super.foo(); // why bother overriding?
+     * }
+     * 
+     * &#064;Id
+     * public Long getId() {
+     *     return super.getId(); // OK if 'ignoreAnnotations' is false, which is the default behavior
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String USELESS_OVERRIDING_METHOD                         = "PMD.UselessOverridingMethod";
+
+    /**
+     * An operation on an Immutable object (String, BigDecimal or BigInteger) won't change the object itself since the
+     * result of the operation is a new object. Therefore, ignoring the operation result is an error. <h2>Example</h2>
+     * 
+     * <pre>
+     * class Test {
+     *     void method1() {
+     *         BigDecimal bd = new BigDecimal(10);
+     *         bd.add(new BigDecimal(5)); // this will trigger the rule
+     *     }
+     * 
+     *     void method2() {
+     *         BigDecimal bd = new BigDecimal(10);
+     *         bd = bd.add(new BigDecimal(5)); // this won't trigger the rule
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String USELESS_OPERATION_ON_IMMUTABLE                    = "PMD.UselessOperationOnImmutable";
+
+    /**
+     * After checking an object reference for null, you should invoke equals() on that object rather than passing it to
+     * another object's equals() method. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Test {
+     * 
+     *     public String method1() {
+     *         return &quot;ok&quot;;
+     *     }
+     * 
+     *     public String method2() {
+     *         return null;
+     *     }
+     * 
+     *     public void method(String a) {
+     *         String b;
+     *         // I don't know it method1() can be &quot;null&quot;
+     *         // but I know &quot;a&quot; is not null..
+     *         // I'd better write a.equals(method1())
+     * 
+     *         if (a != null &amp;&amp; method1().equals(a)) { // will trigger the rule
+     *             // whatever
+     *         }
+     * 
+     *         if (method1().equals(a) &amp;&amp; a != null) { // won't trigger the rule
+     *             // whatever
+     *         }
+     * 
+     *         if (a != null &amp;&amp; method1().equals(b)) { // won't trigger the rule
+     *             // whatever
+     *         }
+     * 
+     *         if (a != null &amp;&amp; &quot;LITERAL&quot;.equals(a)) { // won't trigger the rule
+     *             // whatever
+     *         }
+     * 
+     *         if (a != null &amp;&amp; !a.equals(&quot;go&quot;)) { // won't trigger the rule
+     *             a = method2();
+     *             if (method1().equals(a)) {
+     *                 // whatever
+     *             }
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNUSED_NULL_CHECK_IN_EQUALS                       = "PMD.UnusedNullCheckInEquals";
+
+    /**
+     * Useless parentheses should be removed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * 
+     *     private int     _bar1;
+     *     private Integer _bar2;
+     * 
+     *     public void setBar(int n) {
+     *         _bar1 = Integer.valueOf((n)); // here
+     *         _bar2 = (n); // and here
+     *     }
+     * 
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/unnecessary.html">PMD Unnecessary Rule Set
+     *      Documentation</a>
+     */
+    public static final String USELESS_PARANTHESES                               = "PMD.UselessParentheses";
 
     /**
      * Detects when a private field is declared and/or assigned a value, but not used. <h2>Example</h2>
