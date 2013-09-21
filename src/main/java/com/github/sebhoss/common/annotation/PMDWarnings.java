@@ -2363,7 +2363,287 @@ public final class PMDWarnings {
      */
     public static final String AVOID_PRINT_STACK_TRACE                           = "PMD.AvoidPrintStackTrace";
 
-    // TODO: Add migration rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html
+    /**
+     * Consider replacing Vector usages with the newer java.util.ArrayList if expensive thread-safe operations are not
+     * required. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar() {
+     *         Vector v = new Vector();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String REPLACE_VECTOR_WITH_LIST                          = "PMD.ReplaceVectorWithList";
+
+    /**
+     * Consider replacing Hashtable usage with the newer java.util.Map if thread safety is not required. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar() {
+     *         Hashtable h = new Hashtable();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String REPLACE_HASHTABLE_WITH_MAP                        = "PMD.ReplaceHashtableWithMap";
+
+    /**
+     * Consider replacing Enumeration usages with the newer java.util.Iterator <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo implements Enumeration {
+     *     private int x = 42;
+     * 
+     *     public boolean hasMoreElements() {
+     *         return true;
+     *     }
+     * 
+     *     public Object nextElement() {
+     *         return String.valueOf(i++);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String REPLACE_ENUMERATION_WITH_ITERATOR                 = "PMD.ReplaceEnumerationWithIterator";
+
+    /**
+     * Use of the term 'enum' will conflict with newer versions of Java since it is a reserved word. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class A {
+     *     public  class foo {
+     *         String enum = "foo";
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_ENUM_AS_IDENTIFIER                          = "PMD.AvoidEnumAsIdentifier";
+
+    /**
+     * Use of the term 'assert' will conflict with newer versions of Java since it is a reserved word. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class A {
+     *     public  class foo {
+     *         String assert = "foo";
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_ASSERT_AS_IDENTIFIER                        = "PMD.AvoidAssertAsIdentifier";
+
+    /**
+     * Calling new Integer() causes memory allocation that can be avoided by the static Integer.valueOf(). It makes use
+     * of an internal cache that recycles earlier instances making it more memory efficient. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private Integer i = new Integer(0); // change to Integer i = Integer.valueOf(0);
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String INTEGER_INSTANTIATION                             = "PMD.IntegerInstantiation";
+
+    /**
+     * Calling new Byte() causes memory allocation that can be avoided by the static Byte.valueOf(). It makes use of an
+     * internal cache that recycles earlier instances making it more memory efficient. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private Byte i = new Byte(0); // change to Byte i = Byte.valueOf(0);
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String BYTE_INSTANTIATION                                = "PMD.ByteInstantiation";
+
+    /**
+     * Calling new Short() causes memory allocation that can be avoided by the static Short.valueOf(). It makes use of
+     * an internal cache that recycles earlier instances making it more memory efficient. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private Short i = new Short(0); // change to Short i = Short.valueOf(0);
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String SHORT_INSTANTIATION                               = "PMD.ShortInstantiation";
+
+    /**
+     * Calling new Long() causes memory allocation that can be avoided by the static Long.valueOf(). It makes use of an
+     * internal cache that recycles earlier instances making it more memory efficient. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private Long i = new Long(0); // change to Long i = Long.valueOf(0);
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String LONG_INSTANTIATION                                = "PMD.LongInstantiation";
+
+    /**
+     * In JUnit 3, the setUp method was used to set up all data entities required in running tests. JUnit 4 skips the
+     * setUp method and executes all methods annotated with @Before before all tests <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyTest {
+     *     public void setUp() {
+     *         bad();
+     *     }
+     * }
+     * 
+     * public class MyTest2 {
+     *     &#064;Before
+     *     public void setUp() {
+     *         good();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String JUNIT_4_TEST_SHOULD_USE_BEFORE_ANNOTATION         = "PMD.JUnit4TestShouldUseBeforeAnnotation";
+
+    /**
+     * In JUnit 3, the tearDown method was used to clean up all data entities required in running tests. JUnit 4 skips
+     * the tearDown method and executes all methods annotated with @After after running each test. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyTest {
+     *     public void tearDown() {
+     *         bad();
+     *     }
+     * }
+     * 
+     * public class MyTest2 {
+     *     &#064;After
+     *     public void tearDown() {
+     *         good();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String JUNIT_4_TEST_SHOULD_USE_AFTER_ANNOTATION          = "PMD.JUnit4TestShouldUseAfterAnnotation";
+
+    /**
+     * In JUnit 3, the framework executed all methods which started with the word test as a unit test. In JUnit 4, only
+     * methods annotated with the @Test annotation are executed. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyTest {
+     *     public void testBad() {
+     *         doSomething();
+     *     }
+     * 
+     *     &#064;Test
+     *     public void testGood() {
+     *         doSomething();
+     *     }
+     * }
+     * 
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String JUNIT_4_TEST_SHOULD_USE_TEST_ANNOTATION           = "PMD.JUnit4TestShouldUseTestAnnotation";
+
+    /**
+     * In JUnit 3, test suites are indicated by the suite() method. In JUnit 4, suites are indicated through the
+     * 
+     * @RunWith(Suite.class) annotation. <h2>Example</h2>
+     * 
+     *                       <pre>
+     * public class BadExample extends TestCase {
+     * 
+     *     public static Test suite() {
+     *         return new Suite();
+     *     }
+     * }
+     * 
+     * &#064;RunWith(Suite.class)
+     * &#064;SuiteClasses({ TestOne.class, TestTwo.class })
+     * public class GoodTest {
+     * }
+     * </pre>
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String JUNIT_4_SUITES_SHOULD_USE_SUITE_ANNOTATION        = "PMD.JUnit4SuitesShouldUseSuiteAnnotation";
+
+    /**
+     * In JUnit4, use the @Test(expected) annotation to denote tests that should throw exceptions. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyTest {
+     *     &#064;Test
+     *     public void testBad() {
+     *         try {
+     *             doSomething();
+     *             fail(&quot;should have thrown an exception&quot;);
+     *         } catch (Exception e) {
+     *         }
+     *     }
+     * 
+     *     &#064;Test(expected = Exception.class)
+     *     public void testGood() {
+     *         doSomething();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
+     *      Documentation</a>
+     */
+    public static final String JUNIT_USE_EXPECTED                                = "PMD.JUnitUseExpected";
+
     // TODO: Add naming rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/naming.html
     // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
     // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
