@@ -3229,7 +3229,287 @@ public final class PMDWarnings {
      */
     public static final String GENERICS_NAMING                                   = "PMD.GenericsNaming";
 
-    // TODO: Add optimazation rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html
+    /**
+     * A local variable assigned only once can be declared final. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Bar {
+     *     public void foo() {
+     *         String txtA = &quot;a&quot;; // if txtA will not be assigned again it is better to do this:
+     *         final String txtB = &quot;b&quot;;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String LOCAL_VARIABLE_COULD_BE_FINAL                     = "PMD.LocalVariableCouldBeFinal";
+
+    /**
+     * A method argument that is never re-assigned within the method can be declared final. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void foo1(String param) { // do stuff with param never assigning it
+     * 
+     * }
+     * 
+     * public void foo2(final String param) { // better, do stuff with param never assigning it
+     * 
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String METHOD_ARGUMENT_COULD_BE_FINAL                    = "PMD.MethodArgumentCouldBeFinal";
+
+    /**
+     * New objects created within loops should be checked to see if they can created outside them and reused. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Something {
+     *     public static void main(String as[]) {
+     *         for (int i = 0; i &lt; 10; i++) {
+     *             Foo f = new Foo(); // Avoid this whenever you can it's really expensive
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_INSTANTIATING_OBJECTS_IN_LOOPS              = "PMD.AvoidInstantiatingObjectsInLoops";
+
+    /**
+     * ArrayList is a much better Collection implementation than Vector if thread-safe operation is not required. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class SimpleTest extends TestCase {
+     *     public void testX() {
+     *         Collection c1 = new Vector();
+     *         Collection c2 = new ArrayList(); // achieves the same with much better performance
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_ARRAY_LIST_INSTEAD_OF_VECTOR                  = "PMD.UseArrayListInsteadOfVector";
+
+    /**
+     * Since it passes in a literal of length 1, calls to (string).startsWith can be rewritten using (string).charAt(0)
+     * at the expense of some readability. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     * 
+     *     boolean checkIt(String x) {
+     *         return x.startsWith(&quot;a&quot;); // suboptimal
+     *     }
+     * 
+     *     boolean fasterCheckIt(String x) {
+     *         return x.charAt(0) == 'a'; // faster approach
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String SIMPLIFY_STARTS_WITH                              = "PMD.SimplifyStartsWith";
+
+    /**
+     * The use of the '+=' operator for appending strings causes the JVM to create and use an internal StringBuffer. If
+     * a non-trivial number of these concatenations are being used then the explicit use of a StringBuilder or
+     * threadsafe StringBuffer is recommended to avoid this. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar() {
+     *         String a;
+     *         a = &quot;foo&quot;;
+     *         a += &quot; bar&quot;;
+     *         // better would be:
+     *         // StringBuilder a = new StringBuilder(&quot;foo&quot;);
+     *         // a.append(&quot; bar);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_STRING_BUFFER_FOR_STRING_APPENDS              = "PMD.UseStringBufferForStringAppends";
+
+    /**
+     * The java.util.Arrays class has a "asList" method that should be used when you want to create a new List from an
+     * array of objects. It is faster than executing a loop to copy all the elements of the array one by one. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Test {
+     *     public void foo(Integer[] ints) {
+     *         // could just use Arrays.asList(ints)
+     *         List l = new ArrayList(10);
+     *         for (int i = 0; i &lt; 100; i++) {
+     *             l.add(ints[i]);
+     *         }
+     *         for (int i = 0; i &lt; 100; i++) {
+     *             l.add(a[i].toString()); // won't trigger the rule
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_ARRAYS_AS_LIST                                = "PMD.UseArraysAsList";
+
+    /**
+     * Instead of manually copying data between two arrays, use the efficient System.arraycopy method instead. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class Test {
+     *   public void bar() {
+     *     int[] a = new int[10];
+     *     int[] b = new int[10];
+     *     for (int i=0;i<10;i++) {
+     *       b[i]=a[i];
+     *     }
+     *   }
+     * }
+     *      // this will trigger the rule
+     *      for (int i=0;i<10;i++) {
+     *        b[i]=a[c[i]];
+     *      }
+     * 
+     *   }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_ARRAY_LOOPS                                 = "PMD.AvoidArrayLoops";
+
+    /**
+     * Most wrapper classes provide static conversion methods that avoid the need to create intermediate objects just to
+     * create the primitive forms. Using these avoids the cost of creating objects that also need to be
+     * garbage-collected later. <h2>Example</h2>
+     * 
+     * <pre>
+     * public int convert(String s) {
+     *     int i, i2;
+     * 
+     *     i = Integer.valueOf(s).intValue(); // this wastes an object
+     *     i = Integer.parseInt(s); // this is better
+     * 
+     *     i2 = Integer.valueOf(i).intValue(); // this wastes an object
+     *     i2 = i; // this is better
+     * 
+     *     String s3 = Integer.valueOf(i2).toString(); // this wastes an object
+     *     s3 = Integer.toString(i2); // this is better
+     * 
+     *     return i2;
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_WRAPPER_OBJECT_CREATION               = "PMD.UnnecessaryWrapperObjectCreation";
+
+    /**
+     * The conversion of literals to strings by concatenating them with empty strings is inefficient. It is much better
+     * to use one of the type-specific toString() methods instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * // inefficient
+     * String s = &quot;&quot; + 123;
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String ADD_EMPTY_STRING                                  = "PMD.AddEmptyString";
+
+    /**
+     * Java will initialize fields with known default values so any explicit initialization of those same defaults is
+     * redundant and results in a larger class file (approximately three additional bytecode instructions per field).
+     * <h2>Example</h2>
+     * 
+     * <pre>
+     * public class C {
+     *     boolean b     = false; // examples of redundant initializers
+     *     byte    by    = 0;
+     *     short   s     = 0;
+     *     char    c     = 0;
+     *     int     i     = 0;
+     *     long    l     = 0;
+     * 
+     *     float   f     = .0f;  // all possible float literals
+     *     doable  d     = 0d;   // all possible double literals
+     *     Object  o     = null;
+     * 
+     *     MyClass mca[] = null;
+     *     int     i1    = 0, ia1[] = null;
+     * 
+     *     class Nested {
+     *         boolean b = false;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String REDUNDANT_FIELD_INITIALIZER                       = "PMD.RedundantFieldInitializer";
+
+    /**
+     * Checks for variables that are defined before they might be used. A reference is deemed to be premature if it is
+     * created right before a block of code that doesn't use it that also has the ability to return or throw an
+     * exception. <h2>Example</h2>
+     * 
+     * <pre>
+     * public int getLength(String[] strings) {
+     * 
+     *     int length = 0; // declared prematurely
+     * 
+     *     if (strings == null || strings.length == 0)
+     *         return 0;
+     * 
+     *     for (String str : strings) {
+     *         length += str.length();
+     *     }
+     * 
+     *     return length;
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/optimizations.html">PMD Optimization Rule Set
+     *      Documentation</a>
+     */
+    public static final String PREMATURE_DECLARATION                             = "PMD.PrematureDeclaration";
+
     // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
 
