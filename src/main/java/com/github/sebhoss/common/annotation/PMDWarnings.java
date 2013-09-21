@@ -2202,7 +2202,247 @@ public final class PMDWarnings {
      */
     public static final String MISSING_SERIAL_VERSION_UID                        = "PMD.MissingSerialVersionUID";
 
-    // TODO: Add JUnit rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html
+    /**
+     * The suite() method in a JUnit test needs to be both public and static. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends TestCase {
+     *     public void suite() {
+     *     } // oops, should be static
+     * 
+     *     private static void suite() {
+     *     } // oops, should be public
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String JUNIT_STATIC_SUITE                                = "PMD.JUnitStaticSuite";
+
+    /**
+     * Some JUnit framework methods are easy to misspell. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends TestCase {
+     *     public void setup() {
+     *     } // oops, should be setUp
+     * 
+     *     public void TearDown() {
+     *     } // oops, should be tearDown
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String JUNIT_SPELLING                                    = "PMD.JUnitSpelling";
+
+    /**
+     * JUnit assertions should include an informative message - i.e., use the three-argument version of assertEquals(),
+     * not the two-argument version. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends TestCase {
+     *     public void testSomething() {
+     *         assertEquals(&quot;foo&quot;, &quot;bar&quot;);
+     *         // Use the form:
+     *         // assertEquals(&quot;Foo does not equals bar&quot;, &quot;foo&quot;, &quot;bar&quot;);
+     *         // instead
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.04
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String JUNIT_ASSERTIONS_SHOULD_INCLUDE_MESSAGE           = "PMD.JUnitAssertionsShouldIncludeMessage";
+
+    /**
+     * JUnit tests should include at least one assertion. This makes the tests more robust, and using assert with
+     * messages provide the developer a clearer idea of what the test does. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends TestCase {
+     *     public void testSomething() {
+     *         Bar b = findBar();
+     *         // This is better than having a NullPointerException
+     *         // assertNotNull(&quot;bar not found&quot;, b);
+     *         b.work();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 2.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String JUNIT_TESTS_SHOULD_INCLUDE_ASSERT                 = "PMD.JUnitTestsShouldIncludeAssert";
+
+    /**
+     * Test classes end with the suffix Test. Having a non-test class with that name is not a good practice, since most
+     * people will assume it is a test case. Test classes have test methods named testXXX. <h2>Example</h2>
+     * 
+     * <pre>
+     * // Consider changing the name of the class if it is not a test
+     * // Consider adding test methods if it is a test
+     * public class CarTest {
+     *     public static void main(String[] args) {
+     *         // do something
+     *     }
+     *     // code
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String TEST_CLASS_WITHOUT_TEST_CASES                     = "PMD.TestClassWithoutTestCases";
+
+    /**
+     * A JUnit test assertion with a boolean literal is unnecessary since it always will evaluate to the same thing.
+     * Consider using flow control (in case of assertTrue(false) or similar) or simply removing statements like
+     * assertTrue(true) and assertFalse(false). If you just want a test to halt after finding an error, use the fail()
+     * method and provide an indication message of why it did. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SimpleTest extends TestCase {
+     *     public void testX() {
+     *         assertTrue(true); // serves no real purpose
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String UNNECESSARY_BOOLEAN_ASSERTION                     = "PMD.UnnecessaryBooleanAssertion";
+
+    /**
+     * This rule detects JUnit assertions in object equality. These assertions should be made by more specific methods,
+     * like assertEquals. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class FooTest extends TestCase {
+     *     void testCode() {
+     *         Object a, b;
+     *         assertTrue(a.equals(b)); // bad usage
+     *         assertEquals(a, b); // good usage
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String USE_ASSERT_EQUALS_INSTEAD_OF_ASSERT_TRUE          = "PMD.UseAssertEqualsInsteadOfAssertTrue";
+
+    /**
+     * This rule detects JUnit assertions in object references equality. These assertions should be made by more
+     * specific methods, like assertSame, assertNotSame. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class FooTest extends TestCase {
+     *     void testCode() {
+     *         Object a, b;
+     *         assertTrue(a == b); // bad usage
+     *         assertSame(a, b); // good usage
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String USE_ASSERT_SAME_INSTEAD_OF_ASSERT_TRUE            = "PMD.UseAssertSameInsteadOfAssertTrue";
+
+    /**
+     * This rule detects JUnit assertions in object references equality. These assertions should be made by more
+     * specific methods, like assertNull, assertNotNull. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class FooTest extends TestCase {
+     *     void testCode() {
+     *         Object a = doSomething();
+     *         assertTrue(a == null); // bad usage
+     *         assertNull(a); // good usage
+     *         assertTrue(a != null); // bad usage
+     *         assertNotNull(a); // good usage
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String USE_ASSERT_NULL_INSTEAD_OF_ASSERT_TRUE            = "PMD.UseAssertNullInsteadOfAssertTrue";
+
+    /**
+     * Avoid negation in an assertTrue or assertFalse test. For example, rephrase: assertTrue(!expr); as:
+     * assertFalse(expr); <h2>Example</h2>
+     * 
+     * <pre>
+     * public class SimpleTest extends TestCase {
+     *     public void testX() {
+     *         assertTrue(&quot;not empty&quot;, !r.isEmpty()); // replace with assertFalse(&quot;not empty&quot;, r.isEmpty())
+     *         assertFalse(!r.isEmpty()); // replace with assertTrue(r.isEmpty())
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String SIMPLIFY_BOOLEAN_ASSERTION                        = "PMD.SimplifyBooleanAssertion";
+
+    /**
+     * JUnit tests should not contain too many asserts. Many asserts are indicative of a complex test, for which it is
+     * harder to verify correctness. Consider breaking the test scenario into multiple, shorter test scenarios.
+     * Customize the maximum number of assertions used by this Rule to suit your needs. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class MyTestCase extends TestCase {
+     *     // Ok
+     *     public void testMyCaseWithOneAssert() {
+     *         boolean myVar = false;
+     *         assertFalse(&quot;should be false&quot;, myVar);
+     *     }
+     * 
+     *     // Bad, too many asserts (assuming max=1)
+     *     public void testMyCaseWithMoreAsserts() {
+     *         boolean myVar = false;
+     *         assertFalse(&quot;myVar should be false&quot;, myVar);
+     *         assertEquals(&quot;should equals false&quot;, false, myVar);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String JUNIT_TEST_CONTAINS_TOO_MANY_ASSERTS              = "PMD.JUnitTestContainsTooManyAsserts";
+
+    /**
+     * When asserting a value is the same as a boolean literal, use assertTrue/assertFalse, instead of assertEquals. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public class MyTestCase extends TestCase {
+     *     public void testMyCase() {
+     *         boolean myVar = true;
+     *         // Ok
+     *         assertTrue(&quot;myVar is true&quot;, myVar);
+     *         // Bad
+     *         assertEquals(&quot;myVar is true&quot;, true, myVar);
+     *         // Bad
+     *         assertEquals(&quot;myVar is false&quot;, false, myVar);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 5.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/junit.html">PMD JUnit Rule Set Documentation</a>
+     */
+    public static final String USE_ASSERT_TRUE_INSTEAD_OF_ASSERT_EQUALS          = "PMD.UseAssertTrueInsteadOfAssertEquals";
 
     /**
      * To make sure the full stacktrace is printed out, use the logging statement with two arguments: a String and a
