@@ -3510,7 +3510,249 @@ public final class PMDWarnings {
      */
     public static final String PREMATURE_DECLARATION                             = "PMD.PrematureDeclaration";
 
-    // TODO: Add strict exceptions rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html
+    /**
+     * Catching Throwable errors is not recommended since its scope is very broad. It includes runtime issues such as
+     * OutOfMemoryError that should be exposed and managed separately. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     try {
+     *         // do something
+     *     } catch (Throwable th) { // should not catch Throwable
+     *         th.printStackTrace();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_CATCHING_THROWABLE                          = "PMD.AvoidCatchingThrowable";
+
+    /**
+     * Methods that declare the generic Exception as a possible throwable are not very helpful since their failure modes
+     * are unclear. Use a class derived from RuntimeException or a more specific checked exception. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void foo() throws Exception {
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String SIGNATURE_DECLARE_THROWS_EXCEPTION                = "PMD.SignatureDeclareThrowsException";
+
+    /**
+     * Using Exceptions as form of flow control is not recommended as they obscure true exceptions when debugging.
+     * Either add the necessary validation or use an alternate control structure. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     try {
+     *         try {
+     *         } catch (Exception e) {
+     *             throw new WrapperException(e);
+     *             // this is essentially a GOTO to the WrapperException catch block
+     *         }
+     *     } catch (WrapperException e) {
+     *         // do some more stuff
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String EXCEPTION_AS_FLOW_CONTROL                         = "PMD.ExceptionAsFlowControl";
+
+    /**
+     * Code should never throw NullPointerExceptions under normal circumstances. A catch block may hide the original
+     * error, causing other, more subtle problems later on. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar() {
+     *         try {
+     *             // do something
+     *         } catch (NullPointerException npe) {
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_CATCHING_NPE                                = "PMD.AvoidCatchingNPE";
+
+    /**
+     * Avoid throwing certain exception types. Rather than throw a raw RuntimeException, Throwable, Exception, or Error,
+     * use a subclassed exception or error instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() throws Exception {
+     *         throw new Exception();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_THROWING_RAW_EXCEPTION_TYPES                = "PMD.AvoidThrowingRawExceptionTypes";
+
+    /**
+     * Avoid throwing NullPointerExceptions. These are confusing because most people will assume that the virtual
+     * machine threw it. Consider using an IllegalArgumentException instead; this will be clearly seen as a
+     * programmer-initiated exception. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     void bar() {
+     *         throw new NullPointerException();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_THROWING_NULL_POINTER_EXCEPTION             = "PMD.AvoidThrowingNullPointerException";
+
+    /**
+     * Catch blocks that merely rethrow a caught exception only add to code size and runtime complexity. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     try {
+     *         // do something
+     *     } catch (SomeException se) {
+     *         throw se;
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_RETHROWING_EXCEPTION                        = "PMD.AvoidRethrowingException";
+
+    /**
+     * Errors are system exceptions. Do not extend them. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo extends Error {
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String DO_NOT_EXTEND_JAVA_LANG_ERROR                     = "PMD.DoNotExtendJavaLangError";
+
+    /**
+     * Throwing exceptions within a 'finally' block is confusing since they may mask other exceptions or code defects.
+     * Note: This is a PMD implementation of the Lint4j rule "A throw in a finally block" <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     public void bar() {
+     *         try {
+     *             // Here do some stuff
+     *         } catch (Exception e) {
+     *             // Handling the issue
+     *         } finally {
+     *             // is this really a good idea ?
+     *             throw new Exception();
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String DO_NOT_THROW_EXCEPTION_IN_FINALLY                 = "PMD.DoNotThrowExceptionInFinally";
+
+    /**
+     * Catch blocks that merely rethrow a caught exception wrapped inside a new instance of the same type only add to
+     * code size and runtime complexity. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     try {
+     *         // do something
+     *     } catch (SomeException se) {
+     *         // harmless comment
+     *         throw new SomeException(se);
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_THROWING_NEW_INSTANCE_OF_SAME_EXCEPTION     = "PMD.AvoidThrowingNewInstanceOfSameException";
+
+    /**
+     * Avoid catching generic exceptions such as NullPointerException, RuntimeException, Exception in try-catch block.
+     * <h2>Example</h2>
+     * 
+     * <pre>
+     * public class PrimitiveType {
+     * 
+     *     public void downCastPrimitiveType() {
+     *         try {
+     *             System.out.println(&quot; i [&quot; + i + &quot;]&quot;);
+     *         } catch (Exception e) {
+     *             e.printStackTrace();
+     *         } catch (RuntimeException e) {
+     *             e.printStackTrace();
+     *         } catch (NullPointerException e) {
+     *             e.printStackTrace();
+     *         }
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_CATCHING_GENERIC_EXCEPTION                  = "PMD.AvoidCatchingGenericException";
+
+    /**
+     * Statements in a catch block that invoke accessors on the exception without using the information only add to code
+     * size. Either remove the invocation, or use the return result. <h2>Example</h2>
+     * 
+     * <pre>
+     * public void bar() {
+     *     try {
+     *         // do something
+     *     } catch (SomeException se) {
+     *         se.getMessage();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strictexception.html">PMD Strict Exceptions Rule
+     *      Set Documentation</a>
+     */
+    public static final String AVOID_LOSING_EXCEPTION_INFORMATION                = "PMD.AvoidLosingExceptionInformation";
+
     // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
 
     /**
