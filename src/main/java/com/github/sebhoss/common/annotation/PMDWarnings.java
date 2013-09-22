@@ -3753,7 +3753,264 @@ public final class PMDWarnings {
      */
     public static final String AVOID_LOSING_EXCEPTION_INFORMATION                = "PMD.AvoidLosingExceptionInformation";
 
-    // TODO: Add strings rule set: http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html
+    /**
+     * Code containing duplicate String literals can usually be improved by declaring the String as a constant field.
+     * <h2>Example</h2>
+     * 
+     * <pre>
+     * private void bar() {
+     *     buz(&quot;Howdy&quot;);
+     *     buz(&quot;Howdy&quot;);
+     *     buz(&quot;Howdy&quot;);
+     *     buz(&quot;Howdy&quot;);
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_DUPLICATE_LITERALS                          = "PMD.AvoidDuplicateLiterals";
+
+    /**
+     * Avoid instantiating String objects; this is usually unnecessary since they are immutable and can be safely
+     * shared. <h2>Example</h2>
+     * 
+     * <pre>
+     * private String bar = new String(&quot;bar&quot;); // just do a String bar = &quot;bar&quot;;
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String STRING_INSTANTIATION                              = "PMD.StringInstantiation";
+
+    /**
+     * Avoid calling toString() on objects already known to be string instances; this is unnecessary. <h2>Example</h2>
+     * 
+     * <pre>
+     * private String baz() {
+     *     String bar = &quot;howdy&quot;;
+     *     return bar.toString();
+     * }
+     * </pre>
+     * 
+     * @since PMD 1.0
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String STRING_TO_STRING                                  = "PMD.StringToString";
+
+    /**
+     * Avoid concatenating non-literals in a StringBuffer constructor or append() since intermediate buffers will need
+     * to be be created and destroyed by the JVM. <h2>Example</h2>
+     * 
+     * <pre>
+     * // Avoid this, two buffers are actually being created here
+     * StringBuffer sb = new StringBuffer(&quot;tmp = &quot; + System.getProperty(&quot;java.io.tmpdir&quot;));
+     * 
+     * // do this instead
+     * StringBuffer sb = new StringBuffer(&quot;tmp = &quot;);
+     * sb.append(System.getProperty(&quot;java.io.tmpdir&quot;));
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String INEFFICIENT_STRING_BUFFERING                      = "PMD.InefficientStringBuffering";
+
+    /**
+     * Using equalsIgnoreCase() is faster than using toUpperCase/toLowerCase().equals() <h2>Example</h2>
+     * 
+     * <pre>
+     * boolean answer1 = buz.toUpperCase().equals(&quot;baz&quot;); // should be buz.equalsIgnoreCase(&quot;baz&quot;)
+     * </pre>
+     * 
+     * @since PMD 3.3
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String UNNECESSARY_CASE_CHANGE                           = "PMD.UnnecessaryCaseChange";
+
+    /**
+     * Use StringBuffer.length() to determine StringBuffer length rather than using StringBuffer.toString().equals("")
+     * or StringBuffer.toString().length() == ... <h2>Example</h2>
+     * 
+     * <pre>
+     * StringBuffer sb = new StringBuffer();
+     * 
+     * if (sb.toString().equals(&quot;&quot;)) {
+     * } // inefficient
+     * 
+     * if (sb.length() == 0) {
+     * } // preferred
+     * </pre>
+     * 
+     * @since PMD 3.4
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_STRING_BUFFER_LENGTH                          = "PMD.UseStringBufferLength";
+
+    /**
+     * Avoid concatenating characters as strings in StringBuffer/StringBuilder.append methods. <h2>Example</h2>
+     * 
+     * <pre>
+     * StringBuffer sb = new StringBuffer();
+     * sb.append(&quot;a&quot;); // avoid this
+     * 
+     * StringBuffer sb = new StringBuffer();
+     * sb.append('a'); // use this instead
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String APPEND_CHARACTER_WITH_CHAR                        = "PMD.AppendCharacterWithChar";
+
+    /**
+     * Consecutively calling StringBuffer/StringBuilder.append with String literals <h2>Example</h2>
+     * 
+     * <pre>
+     * StringBuffer buf = new StringBuffer();
+     * buf.append(&quot;Hello&quot;).append(&quot; &quot;).append(&quot;World&quot;); // poor
+     * buf.append(&quot;Hello World&quot;); // good
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String CONSECUTIVE_LITERAL_APPENDS                       = "PMD.ConsecutiveLiteralAppends";
+
+    /**
+     * Use String.indexOf(char) when checking for the index of a single character; it executes faster. <h2>Example</h2>
+     * 
+     * <pre>
+     * String s = "hello world";
+     *   // avoid this
+     * if (s.indexOf("d") {}
+     *   // instead do this
+     * if (s.indexOf('d') {}
+     * </pre>
+     * 
+     * @since PMD 3.5
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_INDEX_OF_CHAR                                 = "PMD.UseIndexOfChar";
+
+    /**
+     * String.trim().length() is an inefficient way to check if a String is really empty, as it creates a new String
+     * object just to check its size. Consider creating a static function that loops through a string, checking
+     * Character.isWhitespace() on each character and returning false if a non-whitespace character is found. <h2>
+     * Example</h2>
+     * 
+     * <pre>
+     * public void bar(String string) {
+     *     if (string != null &amp;&amp; string.trim().size() &gt; 0) {
+     *         doSomething();
+     *     }
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String INEFFICIENT_EMPTY_STRING_CHECK                    = "PMD.InefficientEmptyStringCheck";
+
+    /**
+     * Failing to pre-size a StringBuffer or StringBuilder properly could cause it to re-size many times during runtime.
+     * This rule attempts to determine the total number the characters that are actually passed into
+     * StringBuffer.append(), but represents a best guess "worst case" scenario. An empty StringBuffer/StringBuilder
+     * constructor initializes the object to 16 characters. This default is assumed if the length of the constructor can
+     * not be determined. <h2>Example</h2>
+     * 
+     * <pre>
+     * StringBuffer bad = new StringBuffer();
+     * bad.append(&quot;This is a long string that will exceed the default 16 characters&quot;);
+     * 
+     * StringBuffer good = new StringBuffer(41);
+     * good.append(&quot;This is a long string, which is pre-sized&quot;);
+     * </pre>
+     * 
+     * @since PMD 3.6
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String INSUFFICIENT_STRING_BUFFER_DECLARATION            = "PMD.InsufficientStringBufferDeclaration";
+
+    /**
+     * No need to call String.valueOf to append to a string; just use the valueOf() argument directly. <h2>Example</h2>
+     * 
+     * <pre>
+     * public String convert(int i) {
+     *     String s;
+     *     s = &quot;a&quot; + String.valueOf(i); // not required
+     *     s = &quot;a&quot; + i; // preferred approach
+     *     return s;
+     * }
+     * </pre>
+     * 
+     * @since PMD 3.8
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String USELESS_STRING_VALUE_OF                           = "PMD.UselessStringValueOf";
+
+    /**
+     * Individual character values provided as initialization arguments will be converted into integers. This can lead
+     * to internal buffer sizes that are larger than expected. Some examples: new StringBuffer() // 16 new
+     * StringBuffer(6) // 6 new StringBuffer("hello world") // 11 + 16 = 27 new StringBuffer('A') // chr(A) = 65 new
+     * StringBuffer("A") // 1 + 16 = 17 new StringBuilder() // 16 new StringBuilder(6) // 6 new
+     * StringBuilder("hello world") // 11 + 16 = 27 new StringBuilder('C') // chr(C) = 67 new StringBuilder("A") // 1 +
+     * 16 = 17
+     * 
+     * @since PMD 3.9
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String STRING_BUFFER_INSTANTIATION_WITH_CHAR             = "PMD.StringBufferInstantiationWithChar";
+
+    /**
+     * Using '==' or '!=' to compare strings only works if intern version is used on both sides. Use the equals() method
+     * instead. <h2>Example</h2>
+     * 
+     * <pre>
+     * public boolean test(String s) {
+     *     if (s == &quot;one&quot;)
+     *         return true; // unreliable
+     *     if (&quot;two&quot;.equals(s))
+     *         return true; // better
+     *     return false;
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.1
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String USE_EQUALS_TO_COMPARE_STRINGS                     = "PMD.UseEqualsToCompareStrings";
+
+    /**
+     * StringBuffers/StringBuilders can grow considerably, and so may become a source of memory leaks if held within
+     * objects with long lifetimes. <h2>Example</h2>
+     * 
+     * <pre>
+     * public class Foo {
+     *     private StringBuffer buffer; // potential memory leak as an instance variable;
+     * }
+     * </pre>
+     * 
+     * @since PMD 4.2
+     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/strings.html">PMD String and StringBuffer Rule Set
+     *      Documentation</a>
+     */
+    public static final String AVOID_STRING_BUFFER_FIELD                         = "PMD.AvoidStringBufferField";
 
     /**
      * Exposing internal arrays to the caller violates object encapsulation since elements can be removed or replaced
