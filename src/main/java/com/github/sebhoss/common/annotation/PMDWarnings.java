@@ -1352,18 +1352,14 @@ public final class PMDWarnings {
      * <pre>
      * // Not really clear
      * public class Foo {
-     *     public void bar(
-     *             int inLeftOperand,
-     *             Result outRightOperand) {
+     *     public void bar(int inLeftOperand, Result outRightOperand) {
      *         outRightOperand.setValue(inLeftOperand * outRightOperand.getValue());
      *     }
      * }
      * 
      * // Far more useful
      * public class Foo {
-     *     public void bar(
-     *             final int leftOperand,
-     *             final Result rightOperand) {
+     *     public void bar(final int leftOperand, final Result rightOperand) {
      *         rightOperand.setValue(leftOperand * rightOperand.getValue());
      *     }
      * }
@@ -1412,10 +1408,7 @@ public final class PMDWarnings {
      * 
      * <pre>
      * public class MyClass {
-     *     public void connect(String username,
-     *             String pssd,
-     *             String databaseName,
-     *             String databaseAdress)
+     *     public void connect(String username, String pssd, String databaseName, String databaseAdress)
      *     // Instead of those parameters object
      *     // would ensure a cleaner API and permit
      *     // to add extra data transparently (no code change):
@@ -3249,8 +3242,7 @@ public final class PMDWarnings {
      *     private int           badFoo;  // bad, should be
      *                                     // marked transient
      * 
-     *     private void setMoreFoo(
-     *             int moreFoo) {
+     *     private void setMoreFoo(int moreFoo) {
      *         this.moreFoo = moreFoo;
      *     }
      * 
@@ -3916,10 +3908,9 @@ public final class PMDWarnings {
 
     /**
      * In JUnit 3, test suites are indicated by the suite() method. In JUnit 4, suites are indicated through the
+     * RunWith(Suite.class) annotation. <h2>Example</h2>
      * 
-     * @RunWith(Suite.class) annotation. <h2>Example</h2>
-     * 
-     *                       <pre>
+     * <pre>
      * public class BadExample extends TestCase {
      * 
      *     public static Test suite() {
@@ -3932,6 +3923,7 @@ public final class PMDWarnings {
      * public class GoodTest {
      * }
      * </pre>
+     * 
      * @since PMD 4.0
      * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/migrating.html">PMD Migration Rule Set
      *      Documentation</a>
@@ -5134,22 +5126,6 @@ public final class PMDWarnings {
      *      Set Documentation</a>
      */
     public static final String ARRAY_IS_STORED_DIRECTLY                            = "PMD.ArrayIsStoredDirectly";
-
-    /**
-     * It is unclear which exceptions that can be thrown from the methods. It might be difficult to document and
-     * understand the vague interfaces. Use either a class derived from RuntimeException or a checked exception. JUnit
-     * classes are excluded. <h2>Example</h2>
-     * 
-     * <pre>
-     * public void methodThrowingException() throws Exception {
-     * }
-     * </pre>
-     * 
-     * @since PMD 4.0
-     * @see <a href="http://pmd.sourceforge.net/pmd-5.0.5/rules/java/typeresolution.html">PMD Type Resolution Rule Set
-     *      Documentation</a>
-     */
-    public static final String SIGNATURE_DECLARE_THROWS_EXCEPTION                  = "PMD.SignatureDeclareThrowsException";
 
     /**
      * Avoid the use temporary objects when converting primitives to Strings. Use the static conversion methods on the
