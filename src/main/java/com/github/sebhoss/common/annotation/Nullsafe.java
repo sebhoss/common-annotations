@@ -27,4 +27,20 @@ public final class Nullsafe {
         throw new NullPointerException();
     }
 
+    /**
+     * @param reference
+     *            A possible <code>null</code> reference.
+     * @param message
+     *            The exception message to throw.
+     * @return Either the reference itself, or an {@link NullPointerException}, in case the reference was
+     *         <code>null</code>.
+     */
+    public static <T> T nullsafe(@Nullable final T reference, final String message) {
+        if (reference != null) {
+            return reference;
+        }
+
+        throw new NullPointerException(message);
+    }
+
 }
