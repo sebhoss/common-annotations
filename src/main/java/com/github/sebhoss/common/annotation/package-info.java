@@ -7,5 +7,5 @@
 /**
  * Common code for annotations.
  */
-@NotNullByDefault
+@javax.annotation.ParametersAreNonnullByDefault
 package com.github.sebhoss.common.annotation;
