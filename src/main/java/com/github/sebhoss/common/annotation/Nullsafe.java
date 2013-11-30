@@ -42,5 +42,9 @@ public final class Nullsafe {
 
         throw new NullPointerException(message); // NOPMD - we want to throw NPE here
     }
+    
+    private Nullsafe() {
+    	// utility class
+    }
 
 }
