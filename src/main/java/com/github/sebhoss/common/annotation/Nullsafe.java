@@ -24,7 +24,7 @@ public final class Nullsafe {
             return reference;
         }
 
-        throw new NullPointerException();
+        throw new NullPointerException(); // NOPMD - we want to throw NPE here
     }
 
     /**
@@ -40,7 +40,7 @@ public final class Nullsafe {
             return reference;
         }
 
-        throw new NullPointerException(message);
+        throw new NullPointerException(message); // NOPMD - we want to throw NPE here
     }
 
 }
